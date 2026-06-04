@@ -1,0 +1,59 @@
+/*
+ * Organon Access Program design tokens.
+ * Mirrors references/design.md "Quick CSS Variable Mapping" — token JSON files
+ * remain the source of truth for exact values. Keep magenta for brand emphasis
+ * and primary actions only; blue is support/information, not a competing brand.
+ */
+:root {
+  /* Brand */
+  --color-brand-primary: #e20177;
+  --color-brand-primary-hover: #c10168;
+  --color-brand-secondary: #1b4298;
+
+  /* Text */
+  --color-text-primary: #171717;
+
+  /* Surfaces */
+  --color-surface-default: #ffffff;
+  --color-surface-muted: #f8f8f8;
+  --color-surface-subtle: #f7f7f7;
+  --color-surface-blue: #ebf7fc;
+  --color-surface-blue-subtle: #edf3ff;
+  --color-surface-pink: #ffe5f3;
+
+  /* Borders / dividers */
+  --color-border-subtle: #dfdfdf;
+  --color-border-tab: #cfcfcf;
+  --color-border-brand-subtle: #e8c8db;
+
+  /* Typography */
+  --font-primary: Montserrat, "Montserrat Fallback", sans-serif;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Layout */
+  --container-max: 1184px;
+  --section-pad-desktop: 80px;
+  --section-pad-mobile: 24px;
+  --grid-gap: 24px;
+
+  /* Shape */
+  --radius-card: 8px;
+  --radius-panel: 15px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-card: 0 0 4px 0 rgba(0, 0, 0, 0.05), 0 8px 8px -4px rgba(0, 0, 0, 0.05);
+  --shadow-resource: 0 4px 10px 3px rgba(43, 43, 43, 0.1);
+  --shadow-modal: 0 24px 48px -12px rgba(0, 0, 0, 0.35);
+
+  /* Motion */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+
+  /* Z-index */
+  --z-modal: 1000;
+  --z-drawer: 1100;
+}

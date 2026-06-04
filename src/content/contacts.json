@@ -1,0 +1,25 @@
+{
+  "lastReviewed": "2026-06-04",
+  "items": [
+    {
+      "id": "oap",
+      "name": "Organon Access Program",
+      "description": "Central support for benefit investigations, billing codes, and pharmacy fulfillment for healthcare professional offices.",
+      "phone": "866-809-9515",
+      "fax": "844-232-2618",
+      "website": "https://organonaccessprogram.com/hcp",
+      "hours": "Mon–Fri, 8 AM–8 PM ET",
+      "sourcePage": "23"
+    },
+    {
+      "id": "rems",
+      "name": "NEXPLANON REMS Program",
+      "description": "REMS certification and training. NEXPLANON is available only through a restricted program; HCPs must be certified before ordering. REMS certification is required to place orders beginning 8/23/2026.",
+      "phone": "833-697-7367",
+      "fax": "",
+      "website": "https://www.nexplanonrems.com",
+      "hours": "",
+      "sourcePage": "1"
+    }
+  ]
+}

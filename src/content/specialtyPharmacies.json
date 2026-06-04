@@ -1,0 +1,27 @@
+{
+  "lastReviewed": "2026-06-04",
+  "sourcePage": "16",
+  "intro": "For pharmacy-benefit coverage, NEXPLANON is dispensed through a limited specialty pharmacy network via the Assignment of Benefits (AOB) process. The pharmacy bills the insurer and ships patient-specific product to the office. Organon does not recommend one pharmacy over another.",
+  "items": [
+    {
+      "id": "walgreens",
+      "name": "Walgreens Specialty Pharmacy",
+      "description": "",
+      "phone": "888-380-6188",
+      "fax": "",
+      "website": "",
+      "hours": "",
+      "sourcePage": "16"
+    },
+    {
+      "id": "cvs",
+      "name": "CVS Specialty Pharmacy",
+      "description": "",
+      "phone": "800-237-2767",
+      "fax": "",
+      "website": "",
+      "hours": "",
+      "sourcePage": "16"
+    }
+  ]
+}

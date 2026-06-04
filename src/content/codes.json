@@ -1,0 +1,66 @@
+{
+  "lastReviewed": "2026-06-04",
+  "sourcePage": "28",
+  "groups": [
+    {
+      "system": "ICD-10-CM",
+      "label": "Diagnosis (ICD-10-CM)",
+      "codes": [
+        {
+          "value": "Z30.017",
+          "description": "Encounter for initial prescription of implantable subdermal contraceptive",
+          "sourcePage": "28"
+        },
+        {
+          "value": "Z30.46",
+          "description": "Encounter for surveillance of implantable subdermal contraceptive",
+          "sourcePage": "28"
+        }
+      ]
+    },
+    {
+      "system": "HCPCS",
+      "label": "Drug (J-code / HCPCS)",
+      "codes": [
+        {
+          "value": "J7307",
+          "description": "Etonogestrel implant system, including implant and supplies",
+          "sourcePage": "28"
+        }
+      ]
+    },
+    {
+      "system": "CPT",
+      "label": "Procedure (CPT)",
+      "codes": [
+        {
+          "value": "11981",
+          "description": "Insertion, non-biodegradable drug delivery implant",
+          "sourcePage": "28"
+        },
+        {
+          "value": "11982",
+          "description": "Removal, non-biodegradable drug delivery implant",
+          "sourcePage": "28"
+        },
+        {
+          "value": "11983",
+          "description": "Removal with reinsertion, non-biodegradable drug delivery implant",
+          "sourcePage": "28"
+        }
+      ]
+    },
+    {
+      "system": "NDC",
+      "label": "Drug product (NDC)",
+      "codes": [
+        {
+          "value": "78206-145-01",
+          "description": "NEXPLANON (etonogestrel implant) 68 mg — also shown in 11-digit form as 78206-0145-01",
+          "altValue": "78206-0145-01",
+          "sourcePage": "28"
+        }
+      ]
+    }
+  ]
+}

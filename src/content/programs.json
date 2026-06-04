@@ -1,0 +1,45 @@
+{
+  "lastReviewed": "2026-06-04",
+  "sourcePage": "24-25",
+  "items": [
+    {
+      "id": "rebate",
+      "name": "Commercial Coverage Assurance Program — Rebate",
+      "trigger": "under-reimbursement",
+      "summary": "If reimbursement on an eligible commercial claim falls below the office's acquisition cost, request a rebate for the difference.",
+      "eligibility": [
+        "Commercial insurance only",
+        "Date of service on or after February 1, 2024",
+        "Reimbursement below acquisition cost (under-reimbursement, not full denial)"
+      ],
+      "cap": "Maximum $200 per claim",
+      "excludes": ["Medicaid", "Managed Medicaid", "Medicare", "TRICARE"],
+      "requiredDocs": [
+        "Rebate Request Form (NexplanonPro.com)",
+        "Specialty distributor invoice",
+        "Explanation of Benefits (EOB) with PHI redacted"
+      ],
+      "formLink": "https://www.nexplanonpro.com",
+      "sourcePage": "24"
+    },
+    {
+      "id": "replacement",
+      "name": "Commercial Coverage Assurance Program — Replacement",
+      "trigger": "full-denial",
+      "summary": "On a full coverage denial, request a free replacement implant.",
+      "eligibility": [
+        "Private insurance or Managed Medicaid",
+        "Date of service on or after February 1, 2024",
+        "Full coverage denial (partial reimbursement → use the rebate program instead)"
+      ],
+      "cap": "Maximum 5 replacements per HCP per insurance plan per calendar year",
+      "excludes": [],
+      "requiredDocs": [
+        "Replacement Request Form",
+        "Denial Explanation of Benefits (EOB)"
+      ],
+      "formLink": "https://www.nexplanonpro.com",
+      "sourcePage": "25"
+    }
+  ]
+}

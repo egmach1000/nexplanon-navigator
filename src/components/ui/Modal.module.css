@@ -1,0 +1,36 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  animation: fade var(--transition-base);
+}
+
+.content {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-default);
+  outline: none;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .content {
+    inset: 24px;
+    border-radius: var(--radius-panel);
+    box-shadow: var(--shadow-modal);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "lastReviewed": "2026-06-04",
+  "cms1500": {
+    "formId": "cms-1500",
+    "title": "CMS-1500",
+    "subtitle": "Professional claim",
+    "sourcePage": "29",
+    "boxes": [
+      {
+        "box": "19",
+        "label": "Additional claim information",
+        "guidance": "Include the brand name and generic name, NDC, and total units. (Field designated by the NUCC.)",
+        "example": "NEXPLANON (etonogestrel implant) · NDC 78206-0145-01 · 1 unit",
+        "sourcePage": "29"
+      },
+      {
+        "box": "21",
+        "label": "Diagnosis, nature of illness or injury",
+        "guidance": "Add the ICD-10-CM diagnosis code(s) per the patient's condition.",
+        "example": "A: Z30.017",
+        "watchOut": "Diagnosis codes are selected only by a healthcare professional.",
+        "sourcePage": "29"
+      },
+      {
+        "box": "22",
+        "label": "Resubmission code",
+        "guidance": "When appealing a claim, add claims re-submission code #7 first, followed by the original reference number.",
+        "example": "7 · original reference number",
+        "sourcePage": "29"
+      },
+      {
+        "box": "23",
+        "label": "Prior authorization number",
+        "guidance": "If required, add the prior authorization number provided by the payer.",
+        "sourcePage": "29"
+      },
+      {
+        "box": "24A",
+        "label": "Date(s) of service",
+        "guidance": "Fill out the date(s) of service.",
+        "sourcePage": "29"
+      },
+      {
+        "box": "24B",
+        "label": "Place of service",
+        "guidance": "Enter \"11\" for in-office services provided.",
+        "example": "11",
+        "watchOut": "Different place-of-service codes apply for facility settings.",
+        "sourcePage": "29"
+      },
+      {
+        "box": "24D",
+        "label": "Procedures, services, or supplies",
+        "guidance": "Enter the relevant HCPCS code on line 1 and the relevant CPT code on line 2. If needed, add any modifiers in the appropriate modifier section.",
+        "example": "Line 1: J7307 · Line 2: 11981",
+        "watchOut": "The J-code and CPT code go on separate service lines.",
+        "sourcePage": "29"
+      },
+      {
+        "box": "24E",
+        "label": "Diagnosis pointer",
+        "guidance": "Add the letter from Box 21 that corresponds to the primary diagnosis of each HCPCS or CPT code entered in 24D.",
+        "example": "A",
+        "sourcePage": "29"
+      },
+      {
+        "box": "24F",
+        "label": "Charges",
+        "guidance": "Add the total charge(s) assigned to each service or procedure entered in 24D.",
+        "sourcePage": "29"
+      },
+      {
+        "box": "24G",
+        "label": "Days or units",
+        "guidance": "Add the number of units of service for each code entered in 24D (typically 1). Contact the payer for more information.",
+        "example": "1",
+        "sourcePage": "29"
+      },
+      {
+        "box": "24 (shaded)",
+        "label": "Service lines — NDC / N4 qualifier",
+        "guidance": "Report supplemental information in the shaded portion at the top of each service line. Add the 11-digit NDC; if needed, the N4 qualifier should be listed before the NDC. Check whether the payer requires a specific qualifier.",
+        "example": "N4 78206014501",
+        "sourcePage": "29"
+      }
+    ]
+  },
+  "ub04": {
+    "formId": "ub-04",
+    "title": "UB-04",
+    "subtitle": "Institutional claim",
+    "sourcePage": "30",
+    "boxes": [
+      {
+        "box": "43",
+        "label": "Description",
+        "guidance": "Add a description of the product ID qualifier / NDC number that you enter in Box 44.",
+        "example": "NEXPLANON (etonogestrel implant) 68 mg",
+        "sourcePage": "30"
+      },
+      {
+        "box": "44",
+        "label": "HCPCS / rate / product ID qualifier + NDC",
+        "guidance": "Add the corresponding product ID qualifier / NDC number for the implant, immediately followed by the unit of measure / numeric quantity in Box 46.",
+        "example": "N4 78206014501",
+        "sourcePage": "30"
+      },
+      {
+        "box": "46",
+        "label": "Service units",
+        "guidance": "Enter the unit of measure and numeric quantity for the implant.",
+        "example": "1",
+        "sourcePage": "30"
+      }
+    ]
+  },
+  "enrollment": {
+    "formId": "enrollment",
+    "title": "NEXPLANON Enrollment Form",
+    "formVersion": "4.0",
+    "pageCount": 3,
+    "sourcePage": "31-32",
+    "lastReviewed": "2026-06-04",
+    "verifiedAgainst": "sources/resources/Nexplanon_Sample_Enrollment_Form-(Downloadable_PDF).pdf (Version 4.0, US-XPL-117881 01/26) cross-checked with NEXPLANON-procurement.pdf pp.31-32",
+    "fax": "844-232-2618",
+    "phone": "866-809-9515",
+    "formAccessUrl": "organonaccessprogram.com/hcp",
+    "downloadAsset": "sources/resources/NEX ENROLLMENT FORM_CR10-INTERACTIVE.pdf",
+    "boxes": [
+      {
+        "box": "1",
+        "page": 1,
+        "section": "Form header",
+        "label": "Use the current form",
+        "guidance": "To avoid delays, ensure you are using the most up-to-date Enrollment Form, which can always be accessed at organonaccessprogram.com/hcp.",
+        "sourcePage": "31"
+      },
+      {
+        "box": "2",
+        "page": 1,
+        "section": "Support options",
+        "label": "Select the support you're requesting",
+        "guidance": "Select support options you are requesting (Patient Benefit Investigation and/or Prescription Order). In some instances, the Patient Benefit Investigation will help determine which Specialty Pharmacy(ies) are in the patient's insurance network, which can avoid delays in processing.",
+        "sourcePage": "31"
+      },
+      {
+        "box": "3",
+        "page": 1,
+        "section": "Patient Information",
+        "label": "Patient information",
+        "guidance": "Fill out patient information completely.",
+        "sourcePage": "31"
+      },
+      {
+        "box": "4",
+        "page": 1,
+        "section": "Insurance Information",
+        "label": "Insurance information",
+        "guidance": "Complete the information for the patient's insurance and supplementary insurance (if applicable). Include a copy of the front and back of any insurance card(s).",
+        "sourcePage": "31"
+      },
+      {
+        "box": "5",
+        "page": 2,
+        "section": "Patient Authorization",
+        "label": "When the patient signature is required",
+        "guidance": "Patient signature is NOT required if ONLY Patient Benefit Investigation support has been requested on page 1. If at any point a Prescription Order is requested, a patient signature will be required.",
+        "rule": "signature",
+        "sourcePage": "31"
+      },
+      {
+        "box": "6",
+        "page": 2,
+        "section": "Patient Authorization",
+        "label": "Patient signature line",
+        "guidance": "Signature line for the patient (or for parent/guardian signing on the patient's behalf).",
+        "rule": "signature",
+        "sourcePage": "31"
+      },
+      {
+        "box": "7",
+        "page": 2,
+        "section": "Patient Authorization",
+        "label": "Date",
+        "guidance": "Date is required.",
+        "sourcePage": "31"
+      },
+      {
+        "box": "8",
+        "page": 2,
+        "section": "Patient Authorization",
+        "label": "Patient name (even if guardian signs)",
+        "guidance": "Please list the patient's name (even if a parent/guardian is signing on the patient's behalf).",
+        "rule": "minor",
+        "sourcePage": "31"
+      },
+      {
+        "box": "9",
+        "page": 3,
+        "section": "Prescription Information",
+        "label": "When the prescription section is required",
+        "guidance": "Prescription Information section only required if \"Prescription Order\" support has been requested on page 1.",
+        "sourcePage": "32"
+      },
+      {
+        "box": "10",
+        "page": 3,
+        "section": "Version control",
+        "label": "Match the version number across pages",
+        "guidance": "The version control number is included on every page. To be considered a complete form, all pages of the same version number must be submitted.",
+        "sourcePage": "32"
+      },
+      {
+        "box": "11",
+        "page": 3,
+        "section": "Prescription Information",
+        "label": "Prescriber prescription signature",
+        "guidance": "To complete the prescription, a signature and date are required for at least one of these signature lines (Product Substitution Permitted or Dispense as Written).",
+        "rule": "signature",
+        "sourcePage": "32"
+      },
+      {
+        "box": "12",
+        "page": 3,
+        "section": "Prescription Information",
+        "label": "Missing information",
+        "guidance": "If the form is submitted with missing information, the Office Contact will be notified to provide the missing information.",
+        "sourcePage": "32"
+      },
+      {
+        "box": "13",
+        "page": 3,
+        "section": "Prescriber Information",
+        "label": "Diagnosis code",
+        "guidance": "Please ensure the applicable diagnosis code is indicated (Z30.017, Z30.46, or Other).",
+        "sourcePage": "32"
+      },
+      {
+        "box": "14",
+        "page": 3,
+        "section": "Prescriber Authorization",
+        "label": "Prescriber authorization signature",
+        "guidance": "Prescriber Authorization signature is required for ALL Organon Access Program Enrollment Form submissions.",
+        "rule": "signature",
+        "sourcePage": "32"
+      },
+      {
+        "box": "15",
+        "page": 3,
+        "section": "Prescriber Authorization",
+        "label": "Date",
+        "guidance": "Date is required.",
+        "sourcePage": "32"
+      }
+    ]
+  }
+}

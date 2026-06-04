@@ -1,0 +1,56 @@
+{
+  "lastReviewed": "2026-06-04",
+  "sourcePage": "33-36",
+  "preAppeal": {
+    "heading": "Reimbursement considerations",
+    "intro": "Before filing an appeal, confirm your office has addressed these reimbursement challenges:",
+    "items": [
+      "Has all information on the claim been reviewed for accuracy — including patient and insurance information, as well as required submission documentation?",
+      "Has your office contacted the health plan's claims department? The patient's health plan should always be the first line of support. Was a reason identified for the discrepancy in the expected reimbursement?",
+      "Was the issue related to a coding or billing error? If so, has the error been corrected and resubmitted according to the health plan's appeal process?",
+      "Have you reached out to your provider relations contact at the health plan? If so, what direction was provided?"
+    ],
+    "closing": "If you have been unable to resolve the reimbursement issue after completing the above steps, you may wish to file an appeal. Filing an appeal may or may not result in an adjustment — consult the health plan for the process.",
+    "sourcePage": "34"
+  },
+  "appeal": {
+    "heading": "Appealing denied claims / under-reimbursement",
+    "intro": "What to do if you are under-reimbursed or denied reimbursement after inserting NEXPLANON:",
+    "steps": [
+      {
+        "title": "Confirm correct NDC, J-code, and ICD-10-CM utilization",
+        "detail": "Are all codes correct and complete? See the Billing Code reference above."
+      },
+      {
+        "title": "Verify the patient's insurance coverage with the EOB from the payer",
+        "detail": "Review the claim for accuracy and confirm all required documents were submitted."
+      },
+      {
+        "title": "Call the payer to verify a contracted reimbursement rate with your office",
+        "detail": "Confirm that the EOB provided matches the current payer / practice contracted reimbursement."
+      }
+    ],
+    "routing": "If all the information was correct in your claim submission and in the EOB, see the Commercial Coverage Assurance Program for NEXPLANON — you may be eligible for a rebate or replacement rod when under-reimbursed or denied coverage from commercial insurance plans.",
+    "sourcePage": "35"
+  },
+  "phiNote": "Redact PHI on every submitted EOB. Organon does not guarantee rebate or replacement approval. There are no guarantees of payment at any specific rate — coverage and rates depend on several factors, including coverage policies and provider contracts.",
+  "edgeCases": [
+    {
+      "id": "fqhc",
+      "label": "FQHC LARC carveout",
+      "body": "Policies that support separate reimbursement for LARC devices in the FQHC (Federally Qualified Health Center) setting have been shown to improve access to the full range of contraceptive methods. A list of publicly available FQHC reimbursement policies for Organon is maintained for each state.",
+      "note": "This information may not always be current given recent policy changes, does not constitute a referral, and Organon does not endorse or recommend the use of any given FQHC. Links navigate to webpages outside of Organon Pro.",
+      "linkLabel": "FQHC Carveout Policy List",
+      "linkUrl": "https://organonaccessprogram.com/hcp",
+      "sourcePage": "33"
+    },
+    {
+      "id": "expired-rod",
+      "label": "Abandoned / expired rods — return policy",
+      "body": "The expiration date on the NEXPLANON box is the last day that the rod can be inserted into a patient — not the date by which the rod must be removed.",
+      "linkLabel": "Learn more about the return policy",
+      "linkUrl": "https://organonaccessprogram.com/hcp",
+      "sourcePage": "36"
+    }
+  ]
+}

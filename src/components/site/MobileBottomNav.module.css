@@ -1,0 +1,118 @@
+/* Fixed bottom navigation — hidden at desktop where the top header nav shows. */
+.root {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+}
+
+@media (min-width: 1024px) {
+  .root {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------- audience switcher */
+.audience {
+  display: flex;
+  width: 100%;
+}
+
+.audienceActive,
+.audienceAlt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.audienceActive {
+  background: var(--color-brand-primary);
+  color: #fff;
+}
+
+.audienceAlt {
+  background: var(--color-surface-blue-subtle);
+  color: var(--color-brand-secondary);
+}
+
+/* --------------------------------------------------------------- header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 16px;
+  background: var(--color-surface-default);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  color: var(--color-brand-primary);
+}
+
+.logo {
+  display: inline-flex;
+}
+
+.logoImg {
+  height: 24px;
+  width: auto;
+}
+
+/* --------------------------------------------------------- menu panel */
+.menu {
+  background: var(--color-surface-default);
+  border-top: 1px solid var(--color-border-subtle);
+  box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.08);
+  padding: 8px 16px 16px;
+}
+
+.menuList {
+  display: grid;
+}
+
+.menuLink {
+  display: block;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.menuLink:hover {
+  color: var(--color-brand-primary);
+}
+
+.menuEnroll {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-brand-primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+}
+
+.menuEnroll:hover {
+  background: var(--color-brand-primary-hover);
+}

@@ -1,0 +1,245 @@
+/* ------------------------------------------------------------ utility bar */
+.utilityBar {
+  width: 100%;
+  background: var(--color-brand-secondary);
+}
+
+/* Below 1024px the navigation moves to the bottom-anchored MobileBottomNav. */
+@media (max-width: 1023px) {
+  .utilityBar,
+  .header {
+    display: none;
+  }
+}
+
+.utilityInner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 4px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.audienceActive,
+.audience {
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  padding: 4px 8px;
+}
+
+.audienceActive {
+  background: #fff;
+  color: var(--color-brand-secondary);
+  border-radius: 4px 4px 0 0;
+}
+
+.audience {
+  color: #fff;
+}
+
+.audienceActive:hover,
+.audience:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------------------------------- header */
+.header {
+  width: 100%;
+  background: var(--color-surface-default);
+}
+
+.headerInner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  flex-shrink: 0;
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.logoImg {
+  height: 31px;
+  width: auto;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 32px;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: var(--color-brand-primary);
+}
+
+.navIcon {
+  color: var(--color-brand-primary);
+}
+
+.enroll {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-brand-primary);
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+  color: #fff;
+}
+
+.enroll:hover {
+  background: var(--color-brand-primary-hover);
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------- service banner */
+.serviceBanner {
+  width: 100%;
+  background: var(--color-surface-blue-subtle);
+}
+
+.serviceInner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 8px 24px;
+}
+
+.serviceText {
+  text-align: center;
+  font-size: 18px;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  color: var(--color-brand-secondary);
+}
+
+/* ----------------------------------------------------------- page heading */
+.pageHeading {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 80px 24px 0;
+}
+
+.pageTitle {
+  font-size: 42px;
+  font-weight: var(--weight-bold);
+  line-height: 1.05;
+  color: var(--color-text-primary);
+}
+
+/* ----------------------------------------------------------------- footer */
+.footer {
+  width: 100%;
+  margin-top: 64px;
+  background: #ecf2ff;
+}
+
+.footerInner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footerLogo {
+  height: 32px;
+  width: auto;
+}
+
+.footerLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footerLink {
+  font-size: 16px;
+  font-weight: var(--weight-regular);
+  color: var(--color-brand-secondary);
+  text-decoration: underline;
+}
+
+.footerLink:hover {
+  text-decoration: none;
+}
+
+.footerPrivacyChoice {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.privacyIcon {
+  height: 22px;
+  width: auto;
+}
+
+.footerBottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footerCopy {
+  max-width: 836px;
+  font-size: 12px;
+  font-weight: var(--weight-regular);
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.footerBadges {
+  height: 47px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .pageHeading {
+    padding-top: 24px;
+  }
+  .pageTitle {
+    font-size: 32px;
+  }
+  .serviceText {
+    font-size: 15px;
+  }
+}

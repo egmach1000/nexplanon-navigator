@@ -1,0 +1,113 @@
+{
+  "lastReviewed": "2026-06-04",
+  "buyBill": {
+    "title": "Buy & Bill process",
+    "sourcePage": "11",
+    "intro": "For medical-benefit coverage. The office buys the implant from a specialty distributor and bills insurance for the procedure and the implant.",
+    "steps": [
+      {
+        "title": "Establish account",
+        "detail": "Practice establishes an account with CuraScript SD, TheraCom, or McKesson Medical-Surgical (specialty distributors)."
+      },
+      {
+        "title": "Order implant",
+        "detail": "Practice orders NEXPLANON."
+      },
+      {
+        "title": "Benefit investigation",
+        "detail": "Once a patient and the HCP determine that NEXPLANON is appropriate, a benefit investigation is conducted by either the office or the Organon Access Program."
+      },
+      {
+        "title": "Same-day procedure possible",
+        "detail": "If coverage is confirmed, the patient may receive NEXPLANON that day — provided the office already has available inventory."
+      },
+      {
+        "title": "Bill insurance",
+        "detail": "Practice bills the insurance carrier for the procedure and the implant."
+      },
+      {
+        "title": "Payment",
+        "detail": "Practice pays the invoice for NEXPLANON."
+      }
+    ]
+  },
+  "aob": {
+    "title": "Assignment of Benefits (AOB) process",
+    "sourcePage": "15",
+    "intro": "For pharmacy-benefit coverage. A specialty pharmacy bills the insurer and ships patient-specific product to your office; the office bills separately for the procedure.",
+    "steps": [
+      {
+        "title": "Office submits enrollment",
+        "detail": "Once a patient and the HCP determine that NEXPLANON is appropriate, the office submits an enrollment form via e-prescription or fax."
+      },
+      {
+        "title": "Organon Access Program processes enrollment",
+        "detail": "Organon Access Program conducts a benefit investigation and triages to the appropriate specialty pharmacy if AOB coverage applies. The specialty pharmacy requires patient authorization via text message."
+      },
+      {
+        "title": "Bill insurance for implant",
+        "detail": "The specialty pharmacy bills the insurance plan for NEXPLANON and ships patient-specific NEXPLANON to the office."
+      },
+      {
+        "title": "Schedule patient",
+        "detail": "The office schedules the patient for the procedure."
+      },
+      {
+        "title": "Procedure",
+        "detail": "The patient returns to the office for the procedure."
+      },
+      {
+        "title": "Bill insurance for procedure",
+        "detail": "Once the procedure takes place, the practice bills the insurance carrier for the procedure."
+      }
+    ]
+  },
+  "enrollmentOptions": [
+    {
+      "id": "eprescribe",
+      "title": "E-prescribe within your EMR",
+      "detail": "E-prescribe NEXPLANON within your EMR system. See the How-to-ePrescribe guide for step-by-step instructions.",
+      "formId": "eprescribe"
+    },
+    {
+      "id": "fax",
+      "title": "Download & fax the enrollment form",
+      "detail": "Download, print, complete, and fax the enrollment form to the Organon Access Program.",
+      "formId": "enrollment-interactive"
+    }
+  ],
+  "eprescribeFaqs": {
+    "heading": "E-prescribe FAQs",
+    "sourcePage": "17",
+    "items": [
+      {
+        "q": "How does a parent provide authorization when I prescribe NEXPLANON to a minor under 18?",
+        "a": "If e-prescribing, a text is sent to the patient to collect authorization. There is a dropdown to indicate the relationship to the patient if the parent is signing on their behalf."
+      },
+      {
+        "q": "What happens if pharmacy coverage is not available?",
+        "a": "If a specialty pharmacy can fill the prescription using the patient's medical insurance, the process is the same as if pharmacy coverage were available. If only Buy & Bill coverage is available through the patient's medical insurance, the office will receive a fax with that coverage information."
+      },
+      {
+        "q": "What if my patient doesn't respond to the authorization text sent by the Organon Access Program?",
+        "a": "The Organon Access Program will still triage it to the specialty pharmacy. However, you will have to call the pharmacy for status updates. The specialty pharmacy will be unable to share specific details about the patient case with the Organon Access Program because there is no HIPAA authorization on file."
+      },
+      {
+        "q": "What do I do if I get a fax saying the Organon Access Program can't confirm my training status?",
+        "a": "This could be caused by a data issue rather than your training status itself. You can call your Organon representative, who may be able to help, or call the Organon Service Center at 1-844-674-3200."
+      },
+      {
+        "q": "What do I do if I receive a benefit investigation summary that says “Undisclosed”?",
+        "a": "Some plans will only disclose coverage information to the provider or patient, not the Organon Access Program. Call the plan directly and verify: Is NEXPLANON on a covered benefit? Is it covered under the pharmacy or medical insurance? Which specialty pharmacy is preferred by the plan? Then submit another enrollment form (via e-prescription or fax) indicating the specialty pharmacy NEXPLANON needs to be triaged to."
+      },
+      {
+        "q": "The specialty pharmacy says they can't fill the prescription, or has no record of it.",
+        "a": "This may indicate the Rx landed at the wrong specialty pharmacy. Contact the Organon Access Program to have it transferred or re-triaged to the correct pharmacy and confirm receipt."
+      },
+      {
+        "q": "The specialty pharmacy says the patient needs to be enrolled in the HUB.",
+        "a": "You may receive this while a prescription is being transferred from one specialty pharmacy to another. Call the Organon Access Program at 866-809-9515 to have it transferred to the correct pharmacy."
+      }
+    ]
+  }
+}

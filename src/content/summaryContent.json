@@ -1,0 +1,34 @@
+{
+  "lastReviewed": "2026-06-04",
+  "sourcePage": "10-36",
+  "pathways": {
+    "medical": {
+      "headline": "Medical benefit → Buy & Bill via specialty distributor",
+      "summary": "Order NEXPLANON from a specialty distributor, hold inventory in the office, and bill the patient's insurance for the drug (J7307) and the procedure (CPT 11981 / 11982 / 11983) together.",
+      "orderingKey": "buyBill",
+      "contactSource": "distributors",
+      "documentIds": ["enrollment-interactive", "cms-1500"],
+      "codesNote": null,
+      "nextActions": [
+        "Confirm your distributor account is active and the prescriber is REMS-certified (required to place orders beginning 8/23/2026).",
+        "Verify the patient's medical benefit covers J7307 and the applicable CPT code (11981 / 11982 / 11983).",
+        "Schedule the patient for the in-office insertion or removal visit.",
+        "Submit the claim with J7307 and the CPT code on separate service lines, place of service 11."
+      ]
+    },
+    "pharmacy": {
+      "headline": "Pharmacy benefit → AOB via specialty pharmacy",
+      "summary": "A specialty pharmacy bills the patient's plan for the drug and ships patient-specific NEXPLANON to your office. Your office bills only for the insertion or removal procedure (CPT 11981 / 11982 / 11983).",
+      "orderingKey": "aob",
+      "contactSource": "specialtyPharmacies",
+      "documentIds": ["enrollment-interactive", "eprescribe", "cms-1500"],
+      "codesNote": "On the AOB pathway, the specialty pharmacy bills the patient's plan for the drug (J7307 / NDC). Your office bills only the insertion or removal procedure (CPT).",
+      "nextActions": [
+        "Submit enrollment by e-Prescribe in your EMR or by faxing the NEXPLANON Enrollment Form (fax 844-232-2618).",
+        "Confirm the patient has responded to the specialty pharmacy's text-authorization request.",
+        "Confirm receipt of the patient-specific shipment before scheduling the procedure.",
+        "Bill the procedure only (CPT 11981 / 11982 / 11983) — do not bill J7307 on the AOB pathway."
+      ]
+    }
+  }
+}

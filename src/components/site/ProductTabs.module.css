@@ -1,0 +1,81 @@
+.wrap {
+  width: 100%;
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 40px 24px 0;
+}
+
+.rail {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--color-border-tab);
+}
+
+/*
+ * Only enable horizontal scrolling on narrow screens where the 7 tabs can't
+ * fit. overflow-y is pinned to hidden so the active tab's 1px underline
+ * overflow doesn't also trip a vertical scrollbar (when overflow-x is auto and
+ * overflow-y is left visible, the spec forces overflow-y to compute to auto).
+ * On desktop the tabs fit, so the rail stays a normal, scrollbar-free element.
+ */
+@media (max-width: 640px) {
+  .rail {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+.tab,
+.tabActive {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  padding: 0 20px;
+  border: none;
+  background: transparent;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.tab {
+  color: var(--color-brand-secondary);
+}
+
+.tab:hover {
+  color: var(--color-brand-primary);
+}
+
+.tabActive {
+  color: var(--color-brand-primary);
+}
+
+.tabLabel {
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+  line-height: 20px;
+}
+
+.tabActive .tabLabel {
+  font-weight: var(--weight-bold);
+}
+
+.reg {
+  font-size: 9.5px;
+  font-weight: var(--weight-bold);
+  vertical-align: super;
+}
+
+.underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 4px;
+  background: var(--color-brand-primary);
+}

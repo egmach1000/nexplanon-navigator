@@ -1,0 +1,19 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+*.tsbuildinfo
+
+# Reference-only material; not shipped with the app.
+references/
+sources/
+
+# Local agent/editor state.
+.claude/*.local.json
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea

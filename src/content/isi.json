@@ -1,0 +1,36 @@
+{
+  "lastReviewed": "2026-06-04",
+  "sourcePage": "1-4",
+  "heading": "Important Safety Information & Indication",
+  "remsNote": "NEXPLANON is available only through a restricted program under a Risk Evaluation and Mitigation Strategy (REMS). Healthcare professionals must be trained and certified on proper insertion and removal before first use. REMS certification will be required to place NEXPLANON orders beginning 8/23/2026.",
+  "indication": {
+    "heading": "Indication",
+    "body": "NEXPLANON® (etonogestrel implant) 68 mg is indicated for use by women to prevent pregnancy."
+  },
+  "boxedWarningSummary": {
+    "heading": "Boxed Warning",
+    "body": "Complications of insertion and removal: failure to insert NEXPLANON properly may go unnoticed unless palpated immediately after insertion. The implant must be palpable after insertion; if it is not, the patient must use a non-hormonal contraceptive until implant presence is verified. Failure to remove NEXPLANON may result in continued effects of etonogestrel, deep insertion, migration, and difficult or impossible removal."
+  },
+  "selectedSafety": {
+    "heading": "Selected Safety Information",
+    "paragraphs": [
+      "NEXPLANON should not be used in women who have known or suspected pregnancy; current or history of thrombosis or thromboembolic disorders; liver tumors, benign or malignant, or active liver disease; undiagnosed abnormal genital bleeding; known or suspected breast cancer, personal history of breast cancer, or other progestin-sensitive cancer, now or in the past; or allergic reaction to any of the components of NEXPLANON.",
+      "Changes in menstrual bleeding patterns are likely and are the most frequent reason for discontinuation. Other risks include ectopic pregnancy, thrombotic and other vascular events, liver disease, elevated blood pressure, gallbladder disease, depressed mood, and changes in weight. The most common adverse reaction (≥5%) reported in clinical trials was headache.",
+      "Counsel patients that NEXPLANON does not protect against HIV infection (AIDS) or other sexually transmitted infections."
+    ]
+  },
+  "links": [
+    {
+      "label": "Prescribing Information",
+      "href": "https://www.organon.com/product/usa/pi_circulars/n/nexplanon/nexplanon_pi.pdf"
+    },
+    {
+      "label": "Boxed Warning",
+      "href": "https://www.organon.com/product/usa/pi_circulars/n/nexplanon/nexplanon_pi.pdf"
+    },
+    {
+      "label": "Patient Information",
+      "href": "https://www.organon.com/product/usa/pi_circulars/n/nexplanon/nexplanon_ppi.pdf"
+    }
+  ]
+}

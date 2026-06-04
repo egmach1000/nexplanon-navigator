@@ -1,0 +1,338 @@
+.root {
+  display: grid;
+  gap: 24px;
+}
+
+/* ------------------------------------------------------------ empty state */
+.empty {
+  padding: 24px;
+  border-radius: var(--radius-card);
+  border: 1px dashed var(--color-border-subtle);
+  background: var(--color-surface-subtle);
+}
+
+.emptyText {
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  line-height: 1.6;
+}
+
+.emptyBtn {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: var(--color-brand-primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+}
+
+.emptyBtn:hover {
+  background: var(--color-brand-primary-hover);
+}
+
+/* ------------------------------------------------------------------- hero */
+.hero {
+  padding: 24px;
+  border-radius: var(--radius-panel);
+  background: var(--color-surface-pink);
+  box-shadow: var(--shadow-resource);
+}
+
+.heroRow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 720px) {
+  .heroRow {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.heroMain {
+  max-width: 640px;
+}
+
+.heroPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-default);
+  color: var(--color-brand-primary);
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.heroHeadline {
+  margin-top: 12px;
+  font-size: 22px;
+  font-weight: var(--weight-bold);
+  line-height: 1.25;
+}
+
+.heroSummary {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  line-height: 1.55;
+}
+
+.heroActions {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btnPrimary,
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btnPrimary {
+  border: 1px solid var(--color-brand-primary);
+  background: var(--color-brand-primary);
+  color: #fff;
+}
+
+.btnPrimary:hover {
+  background: var(--color-brand-primary-hover);
+}
+
+.btnGhost {
+  border: 1px solid var(--color-text-primary);
+  background: var(--color-surface-default);
+  color: var(--color-text-primary);
+}
+
+.btnGhost:hover {
+  border-color: var(--color-brand-primary);
+  color: var(--color-brand-primary);
+}
+
+/* ------------------------------------------------------------------ cards */
+.cardGrid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 760px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  padding: 20px;
+  border-radius: var(--radius-panel);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface-default);
+  box-shadow: var(--shadow-card);
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardHead svg {
+  color: var(--color-brand-primary);
+}
+
+.cardTitle {
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.cardBody {
+  margin-top: 14px;
+}
+
+/* numbered list (ordering / next actions) */
+.numberedList {
+  display: grid;
+  gap: 10px;
+}
+
+.numberedList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.stepNum,
+.stepNumOutline {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+}
+
+.stepNum {
+  background: var(--color-brand-primary);
+  color: #fff;
+}
+
+.stepNumOutline {
+  border: 1px solid var(--color-brand-secondary);
+  color: var(--color-brand-secondary);
+}
+
+.stepText {
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+}
+
+.stepDetail {
+  display: block;
+  margin-top: 2px;
+  font-weight: var(--weight-regular);
+  color: var(--color-text-secondary, #555);
+}
+
+/* codes grid */
+.codesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 480px) {
+  .codesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.codeChip {
+  padding: 8px 10px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.codeChipLabel {
+  font-size: 10px;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-brand-secondary);
+}
+
+.codeChipValue {
+  margin-top: 1px;
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+}
+
+.codesNote {
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+.codesHint {
+  margin-top: 8px;
+  font-size: 11px;
+  font-style: italic;
+  color: var(--color-text-secondary, #6b6b6b);
+}
+
+/* documents */
+.docList {
+  display: grid;
+  gap: 10px;
+}
+
+.docLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  color: var(--color-brand-primary);
+  text-decoration: none;
+}
+
+.docLink:hover {
+  text-decoration: underline;
+}
+
+/* contacts */
+.contactList {
+  display: grid;
+  gap: 8px;
+}
+
+.contactRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.contactName {
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+}
+
+.contactPhone {
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--color-brand-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contactPhone:hover {
+  text-decoration: underline;
+}
+
+/* next actions full-width card */
+.fullCard {
+  padding: 20px;
+  border-radius: var(--radius-panel);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface-default);
+  box-shadow: var(--shadow-card);
+}
+
+.footnote {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}

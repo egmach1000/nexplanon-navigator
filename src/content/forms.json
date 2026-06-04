@@ -1,0 +1,70 @@
+{
+  "lastReviewed": "2026-06-04",
+  "items": [
+    {
+      "id": "enrollment-interactive",
+      "title": "NEXPLANON Enrollment Form",
+      "description": "Download this form to fill out, print, and fax.",
+      "href": "/forms/NEX-ENROLLMENT-FORM_CR10-INTERACTIVE.pdf",
+      "sourceAsset": "sources/resources/NEX ENROLLMENT FORM_CR10-INTERACTIVE.pdf",
+      "kind": "enrollment",
+      "sourcePage": "31-32"
+    },
+    {
+      "id": "enrollment-sample",
+      "title": "NEXPLANON Sample Enrollment Form",
+      "description": "Annotated sample showing how to complete each section.",
+      "href": "/forms/Nexplanon_Sample_Enrollment_Form.pdf",
+      "sourceAsset": "sources/resources/Nexplanon_Sample_Enrollment_Form-(Downloadable_PDF).pdf",
+      "kind": "enrollment-sample",
+      "sourcePage": "31-32"
+    },
+    {
+      "id": "eprescribe",
+      "title": "How to e-Prescribe",
+      "description": "Step-by-step guidance for e-prescribing NEXPLANON within your EMR.",
+      "href": "/forms/How-to-ePrescribe.pdf",
+      "sourceAsset": "sources/resources/How-to-ePrescribe.pdf",
+      "kind": "eprescribe",
+      "sourcePage": "17"
+    },
+    {
+      "id": "cms-1500",
+      "title": "Sample CMS-1500",
+      "description": "Reference for box-by-box completion of the CMS-1500 claim form.",
+      "href": "#",
+      "sourceAsset": "",
+      "kind": "claim-sample",
+      "needsVerification": true,
+      "sourcePage": "29"
+    },
+    {
+      "id": "ub-04",
+      "title": "Sample UB-04",
+      "description": "Reference for box-by-box completion of the UB-04 claim form.",
+      "href": "#",
+      "sourceAsset": "",
+      "kind": "claim-sample",
+      "needsVerification": true,
+      "sourcePage": "30"
+    },
+    {
+      "id": "rebate",
+      "title": "Rebate Request Form",
+      "description": "Commercial Coverage Assurance Program — rebate submission.",
+      "href": "https://www.nexplanonpro.com",
+      "sourceAsset": "",
+      "kind": "program",
+      "sourcePage": "24"
+    },
+    {
+      "id": "replacement",
+      "title": "Replacement Request Form",
+      "description": "Commercial Coverage Assurance Program — replacement submission.",
+      "href": "https://www.nexplanonpro.com",
+      "sourceAsset": "",
+      "kind": "program",
+      "sourcePage": "25"
+    }
+  ]
+}

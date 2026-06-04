@@ -1,0 +1,256 @@
+.root {
+  display: grid;
+  gap: 20px;
+}
+
+.group {
+  display: grid;
+  gap: 12px;
+}
+
+/* At larger widths the three triage cards sit side by side rather than
+   stacking, switching to a vertical (icon-over-text) layout so the narrower
+   columns stay balanced. Matches the Figma prototype's md:grid-cols-3. */
+@media (min-width: 768px) {
+  .group {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+
+  .card,
+  .cardSelected {
+    flex-direction: column;
+  }
+}
+
+.card,
+.cardSelected {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 20px;
+  text-align: left;
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-default);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.card:hover {
+  border-color: var(--color-brand-primary);
+}
+
+.cardSelected {
+  border-color: var(--color-brand-primary);
+  background: var(--color-surface-pink);
+}
+
+.icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-pink);
+  color: var(--color-brand-primary);
+}
+
+.cardSelected .icon {
+  background: var(--color-brand-primary);
+  color: #fff;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 17px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+}
+
+.blurb {
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+/* ----------------------------------------------------- verification helper */
+.helper {
+  display: grid;
+  gap: 12px;
+}
+
+.helperPanel,
+.investigatePanel {
+  padding: 20px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface-default);
+}
+
+.investigatePanel {
+  background: var(--color-surface-blue-subtle);
+  border-color: var(--color-surface-blue-subtle);
+}
+
+.helperHeading {
+  font-size: 15px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+}
+
+.numList {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.numItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+}
+
+.numMarker {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand-primary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+}
+
+.subHeading {
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+}
+
+.bulletList {
+  margin-top: 8px;
+  display: grid;
+  gap: 6px;
+  padding-left: 18px;
+}
+
+.bulletList li {
+  list-style: disc;
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+}
+
+.costNote {
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: var(--weight-regular);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+
+.investigateHeading {
+  font-size: 15px;
+  font-weight: var(--weight-bold);
+  color: var(--color-brand-secondary);
+}
+
+.investigateBody {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+}
+
+.investigateActions {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.primaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+}
+
+.primaryAction:hover {
+  background: var(--color-brand-primary-hover);
+}
+
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-brand-secondary);
+  color: var(--color-brand-secondary);
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+}
+
+.secondaryAction:hover {
+  background: #fff;
+}
+
+/* ------------------------------------------------------------- Medicaid note */
+.medicaid {
+  padding: 16px 18px;
+  border-radius: var(--radius-card);
+  border-left: 3px solid var(--color-brand-secondary);
+  background: var(--color-surface-subtle);
+}
+
+.medicaidHeading {
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-brand-secondary);
+}
+
+.medicaidNote {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: var(--weight-semibold);
+  line-height: 1.5;
+}
+
+.medicaidPoints {
+  margin-top: 8px;
+  display: grid;
+  gap: 6px;
+  padding-left: 18px;
+}
+
+.medicaidPoints li {
+  list-style: disc;
+  font-size: 13px;
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+}

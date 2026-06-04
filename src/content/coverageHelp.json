@@ -1,0 +1,32 @@
+{
+  "lastReviewed": "2026-06-04",
+  "sourcePage": "8-9",
+  "intro": "NEXPLANON is covered by most healthcare plans. If covered, it will be covered as either a medical benefit or a pharmacy benefit — and that distinction determines how you order it. The Organon Access Program can help determine specific coverage, or your office (or the patient) can verify with the plan directly.",
+  "callScript": {
+    "heading": "Verify coverage with the plan",
+    "steps": [
+      "Call the customer service number listed on the back of the health insurance card.",
+      "Tell the representative that NEXPLANON is a provider-administered birth control drug, and that the provider will prescribe, order, and insert NEXPLANON.",
+      "Ask the representative if NEXPLANON is covered and, if not, ask if there is coverage as a pharmacy benefit."
+    ],
+    "questionsIfCovered": [
+      "Are NEXPLANON and the insertion procedure 100% covered? If not, what are the out-of-pocket costs?",
+      "Is the removal procedure for NEXPLANON also covered? If not, what are the out-of-pocket costs?"
+    ]
+  },
+  "costNote": "The cost of NEXPLANON depends on a patient's insurance plan. Some patients may have coverage with out-of-pocket expenses, including a deductible, co-payment, or other charges, and may pay additional charges in connection with insertion and/or removal (e.g., office visit co-pay). Confirm each patient's coverage and cost-sharing obligations with the relevant payer.",
+  "medicaid": {
+    "heading": "Medicaid",
+    "note": "As with private payers, verify coverage for patients on Medicaid prior to initiating treatment.",
+    "points": [
+      "State Medicaid programs offer coverage for contraceptives, but eligibility guidelines may vary.",
+      "Among women enrolled in Medicaid managed-care organizations, coverage will be based on the specific policies of that managed-care organization."
+    ]
+  },
+  "investigation": {
+    "heading": "Have the Organon Access Program verify coverage for you",
+    "body": "The Organon Access Program can conduct a benefit investigation to determine how NEXPLANON is covered for your patient and which billing codes to use.",
+    "contactId": "oap",
+    "resourceUrl": "https://organonaccessprogram.com/hcp"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "lastReviewed": "2026-06-04",
+  "sourcePage": "18-21",
+  "intro": "Additional ordering methods are available in select states. Not available in all states — please check with your local NEXPLANON representative. The options listed are for your information only and are not a referral, endorsement, or recommendation of any particular company.",
+  "gating": "select-states-note",
+  "items": [
+    {
+      "id": "myiudsupply",
+      "name": "MyIUDSupply.com",
+      "website": "https://www.MyIUDSupply.com",
+      "process": [
+        "Establish account — register to be a Member Practice at MyIUDSupply.com, which generates a username for login",
+        "Benefit investigation for appropriate patient — communicated back to the office within 24 hours",
+        "Schedule patient / place order online — office schedules within 2 weeks; practice fills out an online order form",
+        "Bill MyIUDSupply.com / product delivery — NEXPLANON rod billed to MyIUDSupply.com at no cost to the practice; delivered in 3–5 business days",
+        "Procedure — patient returns for insertion; HCP bills the insurance carrier for the insertion fee"
+      ],
+      "sourcePage": "19"
+    },
+    {
+      "id": "stellar-xpedose",
+      "name": "Stellar Pharmacy Services / XpeDose",
+      "website": "",
+      "process": [
+        "Office enters agreement with Stellar Pharmacy Services for the XpeDose system",
+        "Office onboarding activities — users trained on XpeDose; system delivered with pre-ordered inventory, replenished as needed",
+        "Benefit investigation for appropriate patient — Stellar confirms patient eligibility at the point of care",
+        "Same-day procedure possible — if coverage is confirmed and inventory is on hand, the patient may receive NEXPLANON that day",
+        "Confirm procedure / bill insurance — Stellar bills the carrier for NEXPLANON; HCP bills for the procedure",
+        "Inventory management — Stellar stocks, e-monitors, and replenishes NEXPLANON in the XpeDose system based on agreed-upon levels"
+      ],
+      "sourcePage": "20"
+    },
+    {
+      "id": "vaxcare",
+      "name": "VaxCare",
+      "website": "",
+      "process": [
+        "Office enters agreement with VaxCare",
+        "Office onboarding activities — VaxCare links to the practice EMR, sets up shipment with device distributors, sends initial inventory, and trains HCPs",
+        "Benefit investigation for appropriate patient — VaxCare confirms coverage on the day of or in advance of the appointment",
+        "Same-day procedure possible — if coverage is confirmed and inventory is on hand, the patient may receive NEXPLANON that day",
+        "Confirm procedure / bill insurance — office checks out the device on VaxCare's hub and bills the payer for the procedure; VaxCare bills the carrier for NEXPLANON",
+        "Inventory management — VaxCare purchases and replenishes NEXPLANON inventory to agreed-upon levels"
+      ],
+      "sourcePage": "21"
+    }
+  ]
+}

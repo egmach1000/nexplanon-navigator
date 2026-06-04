@@ -1,0 +1,259 @@
+.path {
+  display: grid;
+  gap: 16px;
+}
+
+.path + .pathLabel {
+  margin-top: 28px;
+}
+
+.pathLabel {
+  font-size: 18px;
+  font-weight: var(--weight-bold);
+  color: var(--color-brand-primary);
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--color-surface-pink);
+  margin-bottom: 4px;
+}
+
+.pathIntro {
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+}
+
+.processCard {
+  padding: 24px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface-default);
+}
+
+.sectionHeading {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+}
+
+.neutrality {
+  font-size: 13px;
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+.cardGrid {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 720px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ------------------------------------------------------------- contact card */
+.card {
+  padding: 16px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface-default);
+}
+
+.cardName {
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+}
+
+.cardDesc {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: var(--weight-regular);
+  line-height: 1.4;
+}
+
+.cardMeta {
+  margin-top: 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.metaRow {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.metaRow dt {
+  flex-shrink: 0;
+  width: 48px;
+  font-weight: var(--weight-bold);
+}
+
+.metaRow dd {
+  margin: 0;
+}
+
+.metaRow a {
+  color: var(--color-brand-secondary);
+  text-decoration: none;
+}
+
+.metaRow a:hover {
+  text-decoration: underline;
+}
+
+.webLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* --------------------------------------------------------- enrollment cards */
+.enrollCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface-default);
+  text-decoration: none;
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.enrollCard:hover {
+  border-color: var(--color-brand-primary);
+  box-shadow: var(--shadow-card);
+}
+
+.enrollTitle {
+  display: block;
+  font-size: 15px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+}
+
+.enrollDetail {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: var(--weight-regular);
+  line-height: 1.4;
+}
+
+.enrollIcon {
+  flex-shrink: 0;
+  color: var(--color-brand-primary);
+}
+
+/* ----------------------------------------------------------------- notes */
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: var(--radius-card);
+  background: var(--color-surface-blue-subtle);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+}
+
+.note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-brand-secondary);
+}
+
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-brand-subtle);
+  background: var(--color-surface-pink);
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+}
+
+.banner svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-brand-primary);
+}
+
+/* ------------------------------------------------------------------- FAQs */
+.faqWrap {
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.faqAnswer {
+  font-size: 14px;
+  font-weight: var(--weight-regular);
+  line-height: 1.6;
+}
+
+/* ----------------------------------------------------- select-state vendors */
+.stateWrap {
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.vendorList {
+  display: grid;
+  gap: 20px;
+}
+
+.vendor {
+  padding: 16px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface-subtle);
+}
+
+.vendorName {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: var(--weight-bold);
+}
+
+.vendorLink {
+  color: var(--color-brand-secondary);
+}
+
+.vendorProcess {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.vendorProcess li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+}
+
+.vendorStepNum {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand-secondary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+}
