@@ -71,37 +71,39 @@ export function SiteFooter() {
     <footer className={styles.footer}>
       <div className={styles.footerInner}>
         <div className={styles.footerTop}>
-          <img src="/logos/organon.png" alt="Organon" className={styles.footerLogo} />
-          <nav className={styles.footerLinks} aria-label="Legal">
-            <a href="#" className={styles.footerLink}>
-              Privacy Policy
-            </a>
-            <a href="#" className={styles.footerLink}>
-              Terms of Use
-            </a>
-            <a href="#" className={styles.footerPrivacyChoice}>
-              <img
-                src="/footer/privacy-choices.png"
-                alt=""
-                aria-hidden
-                className={styles.privacyIcon}
-              />
-              <span className={styles.footerLink}>Your Privacy Choices</span>
-            </a>
-          </nav>
-        </div>
-        <div className={styles.footerBottom}>
-          <p className={styles.footerCopy}>
-            © 2026 Organon group of companies. All rights reserved. ORGANON and
-            the ORGANON Logo are trademarks of the Organon group of companies.
-            This site is intended for US health care professionals. US-TOF-110113
-            06/26
-          </p>
-          <img
-            src="/footer/accessibility-badges.svg"
-            alt="TRUSTe APEC Privacy certification and accessibility badges"
-            className={styles.footerBadges}
-          />
+          <div className={styles.footerBrandColumn}>
+            <img src="/logos/organon.png" alt="Organon" className={styles.footerLogo} />
+            <p className={styles.footerCopy}>
+              © 2026 Organon group of companies. All rights reserved. ORGANON and
+              the ORGANON Logo are trademarks of the Organon group of companies.
+              This site is intended for US health care professionals. US-TOF-110113
+              06/26
+            </p>
+          </div>
+          <div className={styles.footerLegalColumn}>
+            <nav className={styles.footerLinks} aria-label="Legal">
+              <a href="#" className={styles.footerLink}>
+                Privacy Policy
+              </a>
+              <a href="#" className={styles.footerLink}>
+                Terms of Use
+              </a>
+              <a href="#" className={styles.footerPrivacyChoice}>
+                <img
+                  src="/footer/privacy-choices.png"
+                  alt=""
+                  aria-hidden
+                  className={styles.privacyIcon}
+                />
+                <span className={styles.footerLink}>Your Privacy Choices</span>
+              </a>
+            </nav>
+            <img
+              src="/footer/accessibility-badges.svg"
+              alt="TRUSTe APEC Privacy certification and accessibility badges"
+              className={styles.footerBadges}
+            />
+          </div>
         </div>
       </div>
     </footer>
