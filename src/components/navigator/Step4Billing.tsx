@@ -213,7 +213,7 @@ export function Step4Billing() {
   return (
     <div className={styles.root}>
       {/* Code reference */}
-      <section className={styles.section}>
+      <section className={styles.section} data-rail="Code reference">
         <div className={styles.sectionHead}>
           <div className={styles.kicker}>Code reference</div>
           <span className={styles.hint}>Click any code to copy.</span>
@@ -233,7 +233,7 @@ export function Step4Billing() {
       </section>
 
       {/* Claim form helpers */}
-      <section className={styles.section}>
+      <section className={styles.section} data-rail="Claim form helpers">
         <div className={styles.kicker}>Claim form helpers</div>
         <p className={styles.sectionIntro}>
           Select a box to see what to enter and where mistakes commonly happen.
@@ -266,7 +266,7 @@ export function Step4Billing() {
       </section>
 
       {/* Denials & coverage assurance */}
-      <section className={styles.section}>
+      <section className={styles.section} data-rail="Denials & appeals">
         <div className={styles.kicker}>Denials &amp; coverage assurance</div>
         <p className={styles.sectionIntro}>
           If a claim was denied or under-reimbursed, work the pre-appeal checklist
@@ -308,7 +308,7 @@ export function Step4Billing() {
       </section>
 
       {/* Edge cases */}
-      <section className={styles.section}>
+      <section className={styles.section} data-rail="Edge cases">
         <div className={styles.kicker}>Edge cases</div>
         <div className={styles.edgeWrap}>
           <Accordion items={edgeItems} />

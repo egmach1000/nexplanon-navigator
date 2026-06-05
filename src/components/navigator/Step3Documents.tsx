@@ -157,7 +157,7 @@ export function Step3Documents() {
       </div>
 
       {/* Box-by-box walkthrough */}
-      <div>
+      <div data-rail="Box-by-box walkthrough">
         <div className={styles.kicker}>Box-by-box walkthrough</div>
         <p className={styles.kickerSub}>Select a callout to see what it requires.</p>
 
@@ -233,7 +233,7 @@ export function Step3Documents() {
       </div>
 
       {/* Signature rules */}
-      <div>
+      <div data-rail="Signature rules">
         <div className={styles.kicker}>Signature rules</div>
         <div className={styles.calloutGrid}>
           <Callout tone="warn" icon={PenLine} title="Patient signature">
@@ -257,7 +257,7 @@ export function Step3Documents() {
       </div>
 
       {/* Minor handling */}
-      <div>
+      <div data-rail="Patient is under 18">
         <div className={styles.kicker}>Patient is under 18</div>
         <div className={styles.minorCard}>
           <ol className={styles.minorList}>
@@ -272,7 +272,7 @@ export function Step3Documents() {
       </div>
 
       {/* Who signs what */}
-      <div>
+      <div data-rail="Who signs what">
         <div className={styles.kicker}>Who signs what — with the patient present</div>
         <div className={styles.tableWrap}>
           <table className={styles.table}>

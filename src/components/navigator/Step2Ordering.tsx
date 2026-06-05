@@ -69,15 +69,17 @@ function EnrollmentOptionCard({ option }: { option: EnrollmentOption }) {
   );
 }
 
-function MedicalPath() {
+function MedicalPath({ standalone = false }: { standalone?: boolean }) {
   return (
-    <section className={styles.path}>
+    <section className={styles.path} data-rail={standalone ? "Buy & Bill" : undefined}>
       <p className={styles.pathIntro}>{ordering.buyBill.intro}</p>
       <div className={styles.processCard}>
         <ProcessStrip steps={ordering.buyBill.steps} />
       </div>
 
-      <h3 className={styles.sectionHeading}>Specialty distributor accounts</h3>
+      <h3 className={styles.sectionHeading} data-rail="Specialty distributor accounts">
+        Specialty distributor accounts
+      </h3>
       <p className={styles.neutrality}>{distributors.intro}</p>
       <div className={styles.cardGrid}>
         {(distributors.items as Distributor[]).map((d) => (
@@ -93,7 +95,7 @@ function MedicalPath() {
   );
 }
 
-function PharmacyPath() {
+function PharmacyPath({ standalone = false }: { standalone?: boolean }) {
   const faqItems: AccordionItemDef[] = ordering.eprescribeFaqs.items.map((f, i) => ({
     id: `faq-${i}`,
     label: f.q,
@@ -101,20 +103,24 @@ function PharmacyPath() {
   }));
 
   return (
-    <section className={styles.path}>
+    <section className={styles.path} data-rail={standalone ? "AOB enrollment" : undefined}>
       <p className={styles.pathIntro}>{ordering.aob.intro}</p>
       <div className={styles.processCard}>
         <ProcessStrip steps={ordering.aob.steps} />
       </div>
 
-      <h3 className={styles.sectionHeading}>Two ways to enroll</h3>
+      <h3 className={styles.sectionHeading} data-rail="Two ways to enroll">
+        Two ways to enroll
+      </h3>
       <div className={styles.cardGrid}>
         {(ordering.enrollmentOptions as EnrollmentOption[]).map((o) => (
           <EnrollmentOptionCard key={o.id} option={o} />
         ))}
       </div>
 
-      <h3 className={styles.sectionHeading}>Specialty pharmacy network</h3>
+      <h3 className={styles.sectionHeading} data-rail="Specialty pharmacy network">
+        Specialty pharmacy network
+      </h3>
       <p className={styles.neutrality}>{specialtyPharmacies.intro}</p>
       <div className={styles.cardGrid}>
         {(specialtyPharmacies.items as Distributor[]).map((d) => (
@@ -122,7 +128,9 @@ function PharmacyPath() {
         ))}
       </div>
 
-      <h3 className={styles.faqKicker}>{ordering.eprescribeFaqs.heading}</h3>
+      <h3 className={styles.faqKicker} data-rail="e-Prescribe FAQs">
+        {ordering.eprescribeFaqs.heading}
+      </h3>
       <div className={styles.faqWrap}>
         <Accordion items={faqItems} single />
       </div>
@@ -178,8 +186,8 @@ function SelectStateVendors() {
 export function Step2Ordering({ benefitType }: { benefitType: BenefitType | null }) {
   return (
     <div>
-      {benefitType === "medical" && <MedicalPath />}
-      {benefitType === "pharmacy" && <PharmacyPath />}
+      {benefitType === "medical" && <MedicalPath standalone />}
+      {benefitType === "pharmacy" && <PharmacyPath standalone />}
       {(benefitType === "unsure" || benefitType === null) && (
         <>
           <div className={styles.banner}>
@@ -189,15 +197,21 @@ export function Step2Ordering({ benefitType }: { benefitType: BenefitType | null
               go back to Step 1 to verify, or review whichever applies.
             </span>
           </div>
-          <h2 className={styles.pathLabel}>Medical benefit → Buy &amp; Bill</h2>
+          <h2 className={styles.pathLabel} data-rail="Medical benefit → Buy & Bill">
+            Medical benefit → Buy &amp; Bill
+          </h2>
           <MedicalPath />
-          <h2 className={styles.pathLabel}>Pharmacy benefit → AOB</h2>
+          <h2 className={styles.pathLabel} data-rail="Pharmacy benefit → AOB">
+            Pharmacy benefit → AOB
+          </h2>
           <PharmacyPath />
         </>
       )}
 
       <section className={styles.otherMethods}>
-        <h3 className={styles.faqKicker}>Other ordering methods</h3>
+        <h3 className={styles.faqKicker} data-rail="Other ordering methods">
+          Other ordering methods
+        </h3>
         <SelectStateVendors />
       </section>
     </div>

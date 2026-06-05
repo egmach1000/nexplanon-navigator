@@ -24,22 +24,8 @@ export function QuickRefDrawer({
       open={open}
       onClose={onClose}
       title="Quick Reference"
-      description="Copyable codes and key contacts — available from every step."
+      description="Key contacts and copyable codes — available from every step."
     >
-      <h3 className={styles.sectionHeading}>Billing &amp; Coding Reference</h3>
-      <ul className={styles.list}>
-        {flatCodes.map((c) => (
-          <li key={`${c.system}-${c.value}`} className={styles.codeCard}>
-            <div className={styles.codeMain}>
-              <div className={styles.codeSystem}>{c.system}</div>
-              <div className={styles.codeValue}>{c.value}</div>
-              <div className={styles.codeNote}>{c.description}</div>
-            </div>
-            <CopyButton value={c.value} />
-          </li>
-        ))}
-      </ul>
-
       <h3 className={styles.sectionHeading}>Key Contacts</h3>
       <ul className={styles.list}>
         {quickRefContactIds.map((id) => {
@@ -69,6 +55,20 @@ export function QuickRefDrawer({
             </li>
           );
         })}
+      </ul>
+
+      <h3 className={styles.sectionHeading}>Billing &amp; Coding Reference</h3>
+      <ul className={styles.list}>
+        {flatCodes.map((c) => (
+          <li key={`${c.system}-${c.value}`} className={styles.codeCard}>
+            <div className={styles.codeMain}>
+              <div className={styles.codeSystem}>{c.system}</div>
+              <div className={styles.codeValue}>{c.value}</div>
+              <div className={styles.codeNote}>{c.description}</div>
+            </div>
+            <CopyButton value={c.value} />
+          </li>
+        ))}
       </ul>
     </Drawer>
   );

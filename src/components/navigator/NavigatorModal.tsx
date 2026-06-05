@@ -1,9 +1,12 @@
-import { useId, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, BookOpen, Phone, X } from "lucide-react";
 import { Modal } from "../ui/Modal";
 import { IsiBar } from "./IsiBar";
 import { QuickRefDrawer } from "./QuickRefDrawer";
-import { BILLING_STEP_INDEX, STEPS } from "./steps";
+import { SectionRail } from "./SectionRail";
+import { SectionJumpBar } from "./SectionJumpBar";
+import { useSectionRail } from "./useSectionRail";
+import { STEPS } from "./steps";
 import { INITIAL_STATE, type NavigatorState } from "./types";
 import { getContact, telHref } from "../../content";
 import styles from "./NavigatorModal.module.css";
@@ -19,6 +22,16 @@ export function NavigatorModal({
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [state, setState] = useState<NavigatorState>(INITIAL_STATE);
   const titleId = useId();
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  // Re-collect rail sections whenever the step or any answer (which can swap
+  // the rendered branch) changes.
+  const { sections, activeId, scrollTo } = useSectionRail(
+    bodyRef,
+    contentRef,
+    `${stepIdx}|${JSON.stringify(state)}`,
+  );
 
   const update = (patch: Partial<NavigatorState>) =>
     setState((s) => ({ ...s, ...patch }));
@@ -54,15 +67,6 @@ export function NavigatorModal({
           </h1>
         </div>
         <div className={styles.hatches}>
-          {BILLING_STEP_INDEX >= 0 && (
-            <button
-              type="button"
-              className={styles.hatch}
-              onClick={() => goToStep(BILLING_STEP_INDEX)}
-            >
-              Jump to billing codes
-            </button>
-          )}
           <button
             type="button"
             className={styles.hatch}
@@ -135,11 +139,19 @@ export function NavigatorModal({
       </div>
 
       {/* Step body (scrollable) */}
-      <div className={styles.body}>
-        <div className={styles.bodyInner}>
-          <h2 className={styles.question}>{step.title(state)}</h2>
-          <div className={styles.stepContent}>
-            {step.render(state, { update, restart, goToStep })}
+      <div className={styles.body} ref={bodyRef}>
+        <div className={styles.bodyGrid}>
+          {sections.length >= 2 && (
+            <SectionRail sections={sections} activeId={activeId} onJump={scrollTo} />
+          )}
+          <div className={styles.bodyInner}>
+            <h2 className={styles.question}>{step.title(state)}</h2>
+            {sections.length >= 2 && (
+              <SectionJumpBar sections={sections} onJump={scrollTo} />
+            )}
+            <div className={styles.stepContent} ref={contentRef}>
+              {step.render(state, { update, restart, goToStep })}
+            </div>
           </div>
         </div>
       </div>

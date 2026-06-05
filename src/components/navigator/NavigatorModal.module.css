@@ -184,6 +184,20 @@
   background: var(--color-surface-default);
 }
 
+/* Three-column track keeps the content column centered; the rail rides in the
+   left gutter (right-aligned next to the content) and the right gutter balances
+   it. Gutters collapse on narrow viewports where the rail is hidden. */
+.bodyGrid {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 820px) 1fr;
+  align-items: start;
+  column-gap: 24px;
+}
+
+.bodyGrid > .bodyInner {
+  grid-column: 2;
+}
+
 .bodyInner {
   max-width: 820px;
   margin: 0 auto;
