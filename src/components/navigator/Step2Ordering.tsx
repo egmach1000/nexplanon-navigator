@@ -196,8 +196,10 @@ export function Step2Ordering({ benefitType }: { benefitType: BenefitType | null
         </>
       )}
 
-      <h3 className={styles.faqKicker}>Other ordering methods</h3>
-      <SelectStateVendors />
+      <section className={styles.otherMethods}>
+        <h3 className={styles.faqKicker}>Other ordering methods</h3>
+        <SelectStateVendors />
+      </section>
     </div>
   );
 }

@@ -13,7 +13,7 @@ import type { BenefitType, StepDef } from "./types";
 export const STEPS: StepDef[] = [
   {
     key: "coverage",
-    summary: "Coverage triage",
+    summary: "Coverage check",
     title: () => "How is NEXPLANON covered for this patient?",
     render: (state, { update }) => (
       <Step1Coverage
@@ -37,7 +37,7 @@ export const STEPS: StepDef[] = [
   },
   {
     key: "documents",
-    summary: "Documents",
+    summary: "Document preparation",
     title: () => "Complete patient & office documents",
     render: () => <Step3Documents />,
     canContinue: () => true,
@@ -51,7 +51,7 @@ export const STEPS: StepDef[] = [
   },
   {
     key: "summary",
-    summary: "Summary",
+    summary: "Summary report",
     title: () => "Your tailored playbook",
     render: (state, helpers) => (
       <Step5Summary benefitType={state.benefitType} helpers={helpers} />

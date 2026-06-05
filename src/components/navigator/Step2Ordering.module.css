@@ -46,6 +46,18 @@
   color: var(--color-brand-primary);
 }
 
+/*
+ * "Other ordering methods" lives outside the .path grid, so it doesn't inherit
+ * the 16px gap that spaces the E-prescribe FAQs heading/accordion. Re-create
+ * that rhythm here: 16px gap below the heading + (16px margin + .faqKicker's
+ * 8px) = 24px above, matching the FAQs block.
+ */
+.otherMethods {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
 .neutrality {
   font-size: 13px;
   font-weight: var(--weight-regular);

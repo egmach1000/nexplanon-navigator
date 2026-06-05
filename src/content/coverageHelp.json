@@ -45,7 +45,6 @@
   "investigation": {
     "heading": "Have the Organon Access Program verify coverage for you",
     "body": "The Organon Access Program can conduct a benefit investigation to determine how NEXPLANON is covered for your patient and which billing codes to use.",
-    "contactId": "oap",
-    "resourceUrl": "https://organonaccessprogram.com/hcp"
+    "contactId": "oap"
   }
 }

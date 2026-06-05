@@ -65,6 +65,15 @@
       "sourceAsset": "",
       "kind": "program",
       "sourcePage": "25"
+    },
+    {
+      "id": "fqhc-policies",
+      "title": "FQHC Reimbursement Policies",
+      "description": "State-by-state list of publicly available FQHC reimbursement policies supporting separate LARC reimbursement.",
+      "href": "https://organon-nextjs-wpbackend.go-vip.net/organon-images/wp-content/uploads/sites/6/202505_FQHCPolicyList_Website.pdf",
+      "sourceAsset": "",
+      "kind": "policy",
+      "sourcePage": "33"
     }
   ]
 }

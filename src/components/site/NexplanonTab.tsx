@@ -21,6 +21,7 @@ const PI_LINK =
   isi.links.find((l) => l.label === "Prescribing Information")?.href ?? "#";
 
 const ENROLLMENT_FORM_IDS = ["enrollment-interactive", "enrollment-sample", "eprescribe"];
+const BILLING_RESOURCE_IDS = ["rebate", "replacement", "fqhc-policies"];
 
 function FormTile({ form }: { form: FormAsset }) {
   return (
@@ -50,14 +51,27 @@ function ContactCard({ d }: { d: Distributor }) {
           <span className={styles.contactKey}>Fax:</span> {d.fax}
         </p>
       )}
+      {d.website && (
+        <p className={styles.contactLine}>
+          <span className={styles.contactKey}>Web:</span>{" "}
+          <a {...fileLinkProps(d.website)} className={styles.contactWebLink}>
+            {d.website.replace(/^https?:\/\//, "")}
+            <ExternalLink size={12} aria-hidden />
+          </a>
+        </p>
+      )}
     </div>
   );
 }
 
 export function NexplanonTab({ onLaunch }: { onLaunch: () => void }) {
-  const enrollmentForms = ENROLLMENT_FORM_IDS
-    .map((id) => (forms.items as FormAsset[]).find((f) => f.id === id))
-    .filter((f): f is FormAsset => Boolean(f));
+  const byIds = (ids: string[]) =>
+    ids
+      .map((id) => (forms.items as FormAsset[]).find((f) => f.id === id))
+      .filter((f): f is FormAsset => Boolean(f));
+
+  const enrollmentForms = byIds(ENROLLMENT_FORM_IDS);
+  const billingResources = byIds(BILLING_RESOURCE_IDS);
 
   const accordionItems: AccordionItemDef[] = [
     {
@@ -66,6 +80,17 @@ export function NexplanonTab({ onLaunch }: { onLaunch: () => void }) {
       content: (
         <div className={styles.tileGrid}>
           {enrollmentForms.map((f) => (
+            <FormTile key={f.id} form={f} />
+          ))}
+        </div>
+      ),
+    },
+    {
+      id: "billing",
+      label: "Billing & Reimbursement",
+      content: (
+        <div className={styles.tileGrid}>
+          {billingResources.map((f) => (
             <FormTile key={f.id} form={f} />
           ))}
         </div>

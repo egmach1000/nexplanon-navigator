@@ -294,3 +294,9 @@
 .contactKey {
   font-weight: var(--weight-bold);
 }
+
+.contactWebLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}

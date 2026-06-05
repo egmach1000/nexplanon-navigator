@@ -1,4 +1,4 @@
-import { Building2, ExternalLink, HelpCircle, Phone, Pill } from "lucide-react";
+import { Building2, HelpCircle, Phone, Pill } from "lucide-react";
 import { coverageHelp, getContact, telHref } from "../../content";
 import type { BenefitType } from "./types";
 import styles from "./Step1Coverage.module.css";
@@ -49,15 +49,6 @@ function VerificationHelper() {
               Call {contact.name} {contact.phone}
             </a>
           )}
-          <a
-            href={investigation.resourceUrl}
-            target="_blank"
-            rel="noreferrer"
-            className={styles.secondaryAction}
-          >
-            Organon Access Program resources
-            <ExternalLink size={14} aria-hidden />
-          </a>
         </div>
       </div>
     </div>
