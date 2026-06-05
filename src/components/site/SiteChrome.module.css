@@ -153,10 +153,33 @@
   color: var(--color-text-primary);
 }
 
+/* ---------------------------------------------------------- site disclaimer */
+.siteDisclaimer {
+  width: 100%;
+  margin-top: 64px;
+  background: #f8f8f8;
+}
+
+.siteDisclaimerInner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.siteDisclaimerInner p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: var(--weight-regular);
+  line-height: 16px;
+  color: var(--color-text-primary);
+}
+
 /* ----------------------------------------------------------------- footer */
 .footer {
   width: 100%;
-  margin-top: 64px;
   background: #ecf2ff;
 }
 

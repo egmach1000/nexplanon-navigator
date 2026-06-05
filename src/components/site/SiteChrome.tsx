@@ -66,6 +66,43 @@ export function PageHeading({ title }: { title: string }) {
   );
 }
 
+export function SiteDisclaimer() {
+  return (
+    <section className={styles.siteDisclaimer} aria-label="Billing and coding disclaimer">
+      <div className={styles.siteDisclaimerInner}>
+        <p>
+          The information available here is compiled from sources believed to be
+          accurate, but Organon makes no representation that it is accurate. This
+          information is subject to change. Payer coding requirements may vary or
+          change over time, so it is important to regularly check with each payer
+          as to payer-specific requirements.
+        </p>
+        <p>
+          The information available here is not intended to be definitive or
+          exhaustive, and is not intended to replace the guidance of a qualified
+          professional advisor. Organon and its agents make no warranties or
+          guarantees, express or implied, concerning the accuracy or
+          appropriateness of this information for your particular use given the
+          frequent changes in public and private payer billing. The use of this
+          information does not guarantee payment or that any payment received will
+          cover your costs.
+        </p>
+        <p>
+          You are solely responsible for determining the appropriate codes and for
+          any action you take in billing. Information about HCPCS codes is based
+          on guidance issued by the Centers for Medicare &amp; Medicaid Services
+          applicable to Medicare Part B and may not apply to other public or
+          private payers. Consult the relevant manual and/or other guidelines for
+          a description of each code to determine the appropriateness of a
+          particular code and for information on additional codes. Diagnosis codes
+          should be selected only by a health care professional.
+        </p>
+        <p>HCPCS, Healthcare Common Procedure Coding System.</p>
+      </div>
+    </section>
+  );
+}
+
 export function SiteFooter() {
   return (
     <footer className={styles.footer}>

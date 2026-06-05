@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   PageHeading,
   ServiceBanner,
+  SiteDisclaimer,
   SiteFooter,
   SiteHeader,
   TopUtilityBar,
@@ -35,6 +36,7 @@ export default function App() {
         </div>
       )}
 
+      <SiteDisclaimer />
       <SiteFooter />
 
       <MobileBottomNav />
