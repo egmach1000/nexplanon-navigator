@@ -15,11 +15,11 @@
       "cap": "Maximum $200 per claim",
       "excludes": ["Medicaid", "Managed Medicaid", "Medicare", "TRICARE"],
       "requiredDocs": [
-        "Rebate Request Form (NexplanonPro.com)",
+        "Rebate Request Form",
         "Specialty distributor invoice",
         "Explanation of Benefits (EOB) with PHI redacted"
       ],
-      "formLink": "https://www.nexplanonpro.com",
+      "formLink": "https://organonpro.com/en-us/wp-content/uploads/sites/6/2024/11/Updated-Rebate-Request-Form-for-CCAPN.pdf",
       "sourcePage": "24"
     },
     {
@@ -38,7 +38,7 @@
         "Replacement Request Form",
         "Denial Explanation of Benefits (EOB)"
       ],
-      "formLink": "https://www.nexplanonpro.com",
+      "formLink": "https://organonpro.com/en-us/wp-content/uploads/sites/6/2026/03/Replacement_Request_Form_for_CCAPN-MM_Expansion.pdf",
       "sourcePage": "25"
     }
   ]

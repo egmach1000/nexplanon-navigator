@@ -41,7 +41,7 @@
       "body": "Policies that support separate reimbursement for LARC devices in the FQHC (Federally Qualified Health Center) setting have been shown to improve access to the full range of contraceptive methods. A list of publicly available FQHC reimbursement policies for Organon is maintained for each state.",
       "note": "This information may not always be current given recent policy changes, does not constitute a referral, and Organon does not endorse or recommend the use of any given FQHC. Links navigate to webpages outside of Organon Pro.",
       "linkLabel": "FQHC Carveout Policy List",
-      "linkUrl": "https://organonaccessprogram.com/hcp",
+      "linkUrl": "https://organon-nextjs-wpbackend.go-vip.net/organon-images/wp-content/uploads/sites/6/202505_FQHCPolicyList_Website.pdf",
       "sourcePage": "33"
     },
     {
@@ -49,7 +49,7 @@
       "label": "Abandoned / expired rods — return policy",
       "body": "The expiration date on the NEXPLANON box is the last day that the rod can be inserted into a patient — not the date by which the rod must be removed.",
       "linkLabel": "Learn more about the return policy",
-      "linkUrl": "https://organonaccessprogram.com/hcp",
+      "linkUrl": "https://organonpro.com/en-us/product-ordering-resources/",
       "sourcePage": "36"
     }
   ]

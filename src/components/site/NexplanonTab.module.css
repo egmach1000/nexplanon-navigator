@@ -294,23 +294,3 @@
 .contactKey {
   font-weight: var(--weight-bold);
 }
-
-/* ------------------------------------------------------------- disclaimer */
-.disclaimer {
-  margin-top: 40px;
-  padding: 24px;
-  border-radius: var(--radius-card);
-  background: var(--color-surface-subtle);
-}
-
-.disclaimerHeading {
-  font-size: 13px;
-  font-weight: var(--weight-bold);
-}
-
-.disclaimerBody {
-  margin-top: 8px;
-  font-size: 12px;
-  font-weight: var(--weight-regular);
-  line-height: 1.6;
-}

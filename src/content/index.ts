@@ -18,7 +18,6 @@ import programsJson from "./programs.json";
 import formsJson from "./forms.json";
 import isiJson from "./isi.json";
 import formHelpJson from "./formHelp.json";
-import disclaimerJson from "./disclaimer.json";
 import coverageHelpJson from "./coverageHelp.json";
 import orderingJson from "./ordering.json";
 import billingGuidanceJson from "./billingGuidance.json";
@@ -34,7 +33,6 @@ export type Auditable = {
 export type Code = {
   value: string;
   description: string;
-  altValue?: string;
   sourcePage?: string;
 };
 
@@ -135,7 +133,6 @@ export const programs = programsJson;
 export const forms = formsJson;
 export const isi = isiJson;
 export const formHelp = formHelpJson;
-export const disclaimer = disclaimerJson;
 export const coverageHelp = coverageHelpJson;
 export const ordering = orderingJson;
 export const billingGuidance = billingGuidanceJson;
@@ -158,4 +155,18 @@ export function getContact(id: string): Contact | undefined {
 /** Strip a phone/fax string down to digits for a `tel:` href. */
 export function telHref(value: string): string {
   return `tel:${value.replace(/\D/g, "")}`;
+}
+
+/**
+ * Anchor props for a downloadable file / form link. Every real download opens
+ * in a new tab so the navigator modal stays open behind it; placeholder hrefs
+ * ("#") get no target. Spread onto an <a>: `<a {...fileLinkProps(href)}>`.
+ */
+export function fileLinkProps(href: string): {
+  href: string;
+  target?: "_blank";
+  rel?: "noreferrer";
+} {
+  if (!href || href === "#") return { href: href || "#" };
+  return { href, target: "_blank", rel: "noreferrer" };
 }

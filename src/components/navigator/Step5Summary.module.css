@@ -270,6 +270,13 @@
   color: var(--color-text-secondary, #6b6b6b);
 }
 
+.codesFootnote {
+  margin-top: 12px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--color-text-secondary, #6b6b6b);
+}
+
 /* documents */
 .docList {
   display: grid;

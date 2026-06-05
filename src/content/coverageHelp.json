@@ -2,6 +2,25 @@
   "lastReviewed": "2026-06-04",
   "sourcePage": "8-9",
   "intro": "NEXPLANON is covered by most healthcare plans. If covered, it will be covered as either a medical benefit or a pharmacy benefit — and that distinction determines how you order it. The Organon Access Program can help determine specific coverage, or your office (or the patient) can verify with the plan directly.",
+  "benefitChoices": [
+    {
+      "value": "medical",
+      "label": "Medical benefit",
+      "blurb": "The drug and the procedure are covered under the same benefit. NEXPLANON is ordered through a specialty distributor (buy & bill): your practice buys the implant and bills the insurer for both the implant and the procedure.",
+      "sourcePage": "8, 10-11"
+    },
+    {
+      "value": "pharmacy",
+      "label": "Pharmacy benefit",
+      "blurb": "The drug is covered separately from the procedure. Routes to the Assignment of Benefits (AOB) process through a specialty pharmacy, which ships the product to your office and directly bills the medical insurer.",
+      "sourcePage": "14"
+    },
+    {
+      "value": "unsure",
+      "label": "Not sure — help me verify",
+      "blurb": "Get the payer-call script or have the Organon Access Program run a benefit investigation."
+    }
+  ],
   "callScript": {
     "heading": "Verify coverage with the plan",
     "steps": [

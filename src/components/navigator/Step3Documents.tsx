@@ -9,7 +9,7 @@ import {
   User,
   Users,
 } from "lucide-react";
-import { formHelp, forms, type FormAsset, type FormHelpBox } from "../../content";
+import { fileLinkProps, formHelp, forms, type FormAsset, type FormHelpBox } from "../../content";
 import styles from "./Step3Documents.module.css";
 
 /**
@@ -142,13 +142,13 @@ export function Step3Documents() {
         </div>
         <div className={styles.downloadActions}>
           {interactive && (
-            <a className={styles.btnPrimary} href={interactive.href} target="_blank" rel="noreferrer">
+            <a className={styles.btnPrimary} {...fileLinkProps(interactive.href)}>
               <FileDown size={14} aria-hidden />
               Interactive PDF
             </a>
           )}
           {sample && (
-            <a className={styles.btnSecondary} href={sample.href} target="_blank" rel="noreferrer">
+            <a className={styles.btnSecondary} {...fileLinkProps(sample.href)}>
               <FileDown size={14} aria-hidden />
               Sample (printable)
             </a>

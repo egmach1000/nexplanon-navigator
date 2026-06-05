@@ -6,11 +6,11 @@ import {
 } from "lucide-react";
 import { Accordion, type AccordionItemDef } from "../ui/Accordion";
 import {
-  disclaimer,
   distributors,
   forms,
   isi,
   specialtyPharmacies,
+  fileLinkProps,
   telHref,
   type Distributor,
   type FormAsset,
@@ -24,12 +24,7 @@ const ENROLLMENT_FORM_IDS = ["enrollment-interactive", "enrollment-sample", "epr
 
 function FormTile({ form }: { form: FormAsset }) {
   return (
-    <a
-      href={form.href}
-      className={styles.tile}
-      target={form.href.startsWith("http") ? "_blank" : undefined}
-      rel="noreferrer"
-    >
+    <a {...fileLinkProps(form.href)} className={styles.tile}>
       <span>
         <span className={styles.tileTitle}>{form.title}</span>
         {form.description && (
@@ -176,14 +171,6 @@ export function NexplanonTab({ onLaunch }: { onLaunch: () => void }) {
         <h2 className={styles.resourcesHeading}>Product Billing and Coding Resources</h2>
         <div className={styles.accordionWrap}>
           <Accordion items={accordionItems} defaultOpen={[]} />
-        </div>
-      </section>
-
-      {/* Disclaimer */}
-      <section className={styles.section}>
-        <div className={styles.disclaimer}>
-          <h3 className={styles.disclaimerHeading}>{disclaimer.heading}</h3>
-          <p className={styles.disclaimerBody}>{disclaimer.body}</p>
         </div>
       </section>
     </div>

@@ -15,6 +15,7 @@ import {
   ordering,
   specialtyPharmacies,
   summaryContent,
+  fileLinkProps,
   telHref,
   type CodeGroup,
   type Contact,
@@ -90,6 +91,7 @@ function buildPrintHtml(
   .code { border: 1px solid #dfdfdf; border-radius: 6px; padding: 6px 8px; }
   .code .label { font-size: 9px; color: #1b4298; text-transform: uppercase; letter-spacing: .5px; font-weight: 700; }
   .code .value { font-size: 13px; font-weight: 700; }
+  .codes-footnote { margin-top: 8px; font-size: 9px; line-height: 1.5; color: #555; }
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .footer { margin-top: 24px; font-size: 10px; color: #555; border-top: 1px solid #dfdfdf; padding-top: 8px; }
   @page { margin: 0.5in; }
@@ -108,6 +110,7 @@ function buildPrintHtml(
   <div class="codes">
     ${rows.map((r) => `<div class="code"><div class="label">${esc(r.label)}</div><div class="value">${esc(r.value)}</div></div>`).join("")}
   </div>
+  ${codes.footnote ? `<p class="codes-footnote">${esc(codes.footnote)}</p>` : ""}
 
   <div class="grid-2">
     <div>
@@ -242,6 +245,7 @@ export function Step5Summary({
             </div>
             {pathway.codesNote && <p className={styles.codesNote}>{pathway.codesNote}</p>}
             <p className={styles.codesHint}>Use the Quick Reference drawer to copy any code.</p>
+            {codes.footnote && <p className={styles.codesFootnote}>{codes.footnote}</p>}
           </div>
         </section>
 
@@ -255,12 +259,7 @@ export function Step5Summary({
             <ul className={styles.docList}>
               {documents.map((d) => (
                 <li key={d.id}>
-                  <a
-                    className={styles.docLink}
-                    href={d.href}
-                    target={d.href.startsWith("http") || d.href.startsWith("/") ? "_blank" : undefined}
-                    rel="noreferrer"
-                  >
+                  <a className={styles.docLink} {...fileLinkProps(d.href)}>
                     <FileText size={14} aria-hidden />
                     {d.title}
                   </a>

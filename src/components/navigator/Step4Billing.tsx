@@ -14,7 +14,6 @@ import { CopyButton } from "../ui/CopyButton";
 import {
   billingGuidance,
   codes,
-  disclaimer,
   formHelp,
   programs,
   type Code,
@@ -37,10 +36,7 @@ function CodeCard({ system, code }: { system: string; code: Code }) {
     <div className={styles.codeCard}>
       <div>
         <div className={styles.codeSystem}>{system}</div>
-        <div className={styles.codeValue}>
-          {code.value}
-          {code.altValue && <span className={styles.codeAlt}>or {code.altValue}</span>}
-        </div>
+        <div className={styles.codeValue}>{code.value}</div>
         <p className={styles.codeDesc}>{code.description}</p>
       </div>
       <div className={styles.codeCopy}>
@@ -233,6 +229,7 @@ export function Step4Billing() {
             )),
           )}
         </div>
+        {codes.footnote && <p className={styles.codeFootnote}>{codes.footnote}</p>}
       </section>
 
       {/* Claim form helpers */}
@@ -317,15 +314,6 @@ export function Step4Billing() {
           <Accordion items={edgeItems} />
         </div>
       </section>
-
-      {/* Billing disclaimer */}
-      <div className={styles.disclaimer}>
-        <Info size={18} aria-hidden />
-        <div>
-          <div className={styles.disclaimerTitle}>{disclaimer.heading}</div>
-          <p className={styles.disclaimerBody}>{disclaimer.body}</p>
-        </div>
-      </div>
     </div>
   );
 }

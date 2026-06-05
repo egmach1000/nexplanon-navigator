@@ -36,6 +36,16 @@
   color: var(--color-text-primary);
 }
 
+/* Rubine all-caps section label — matches Step 4's .kicker for cross-step style parity. */
+.faqKicker {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-brand-primary);
+}
+
 .neutrality {
   font-size: 13px;
   font-weight: var(--weight-regular);

@@ -1,6 +1,7 @@
 {
   "lastReviewed": "2026-06-04",
   "sourcePage": "28",
+  "footnote": "ᵃJ-codes are part of the Healthcare Common Procedure Coding System (HCPCS). Centers for Medicare and Medicaid Services. CPT = Current Procedural Terminology. CPT © 2025 American Medical Association. All rights reserved. CPT® is a registered trademark of the American Medical Association; ICD-10-CM = International Classification of Diseases, Tenth Revision, Clinical Modification; NDC = National Drug Code.",
   "groups": [
     {
       "system": "ICD-10-CM",
@@ -8,12 +9,12 @@
       "codes": [
         {
           "value": "Z30.017",
-          "description": "Encounter for initial prescription of implantable subdermal contraceptive",
+          "description": "Please refer to the ICD-10-CM Manual for a complete description of the diagnosis code.",
           "sourcePage": "28"
         },
         {
           "value": "Z30.46",
-          "description": "Encounter for surveillance of implantable subdermal contraceptive",
+          "description": "Please refer to the ICD-10-CM Manual for a complete description of the diagnosis code.",
           "sourcePage": "28"
         }
       ]
@@ -56,8 +57,12 @@
       "codes": [
         {
           "value": "78206-145-01",
-          "description": "NEXPLANON (etonogestrel implant) 68 mg — also shown in 11-digit form as 78206-0145-01",
-          "altValue": "78206-0145-01",
+          "description": "NEXPLANON (etonogestrel implant) — 10-digit NDC",
+          "sourcePage": "28"
+        },
+        {
+          "value": "78206-0145-01",
+          "description": "NEXPLANON (etonogestrel implant) — 11-digit NDC (use on CMS-1500 Box 24)",
           "sourcePage": "28"
         }
       ]

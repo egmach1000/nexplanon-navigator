@@ -3,36 +3,16 @@ import { coverageHelp, getContact, telHref } from "../../content";
 import type { BenefitType } from "./types";
 import styles from "./Step1Coverage.module.css";
 
-type Choice = {
-  value: BenefitType;
-  label: string;
-  blurb: string;
-  Icon: typeof Building2;
+/**
+ * Icon per benefit choice — the only part of a choice that lives in code (React
+ * components can't be stored in JSON). Label/blurb/sourcePage come from the
+ * content layer (coverageHelp.benefitChoices) so the client can update copy.
+ */
+const CHOICE_ICONS: Record<BenefitType, typeof Building2> = {
+  medical: Building2,
+  pharmacy: Pill,
+  unsure: HelpCircle,
 };
-
-const CHOICES: Choice[] = [
-  {
-    value: "medical",
-    label: "Medical benefit",
-    blurb:
-      "The drug and the procedure are covered under the same benefit. Most common for NEXPLANON. Routes to buy & bill through a specialty distributor.",
-    Icon: Building2,
-  },
-  {
-    value: "pharmacy",
-    label: "Pharmacy benefit",
-    blurb:
-      "The drug is covered separately from the procedure. Routes to the Assignment of Benefits (AOB) process through a specialty pharmacy.",
-    Icon: Pill,
-  },
-  {
-    value: "unsure",
-    label: "Not sure — help me verify",
-    blurb:
-      "Get the payer-call script or have the Organon Access Program run a benefit investigation.",
-    Icon: HelpCircle,
-  },
-];
 
 /** "Not sure" verification helper: payer-call script + Organon Access Program benefit investigation. */
 function VerificationHelper() {
@@ -96,7 +76,7 @@ export function Step1Coverage({
   value: BenefitType | null;
   onChange: (v: BenefitType) => void;
 }) {
-  const { medicaid } = coverageHelp;
+  const { medicaid, benefitChoices } = coverageHelp;
   return (
     <div className={styles.root}>
       <div
@@ -104,16 +84,18 @@ export function Step1Coverage({
         aria-label="How is NEXPLANON covered for this patient?"
         className={styles.group}
       >
-        {CHOICES.map(({ value: v, label, blurb, Icon }) => {
-          const selected = value === v;
+        {benefitChoices.map(({ value: v, label, blurb }) => {
+          const choiceValue = v as BenefitType;
+          const Icon = CHOICE_ICONS[choiceValue];
+          const selected = value === choiceValue;
           return (
             <button
-              key={v}
+              key={choiceValue}
               type="button"
               role="radio"
               aria-checked={selected}
               className={selected ? styles.cardSelected : styles.card}
-              onClick={() => onChange(v)}
+              onClick={() => onChange(choiceValue)}
             >
               <span className={styles.icon}>
                 <Icon size={22} aria-hidden />

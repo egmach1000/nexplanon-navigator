@@ -7,6 +7,7 @@ import {
   ordering,
   specialtyPharmacies,
   stateVendors,
+  fileLinkProps,
   telHref,
   type Distributor,
   type EnrollmentOption,
@@ -58,12 +59,7 @@ function ContactCard({ d }: { d: Distributor }) {
 function EnrollmentOptionCard({ option }: { option: EnrollmentOption }) {
   const form = (forms.items as FormAsset[]).find((f) => f.id === option.formId);
   return (
-    <a
-      href={form?.href ?? "#"}
-      className={styles.enrollCard}
-      target={form?.href?.startsWith("http") ? "_blank" : undefined}
-      rel="noreferrer"
-    >
+    <a {...fileLinkProps(form?.href ?? "#")} className={styles.enrollCard}>
       <span>
         <span className={styles.enrollTitle}>{option.title}</span>
         <span className={styles.enrollDetail}>{option.detail}</span>
@@ -126,7 +122,7 @@ function PharmacyPath() {
         ))}
       </div>
 
-      <h3 className={styles.sectionHeading}>{ordering.eprescribeFaqs.heading}</h3>
+      <h3 className={styles.faqKicker}>{ordering.eprescribeFaqs.heading}</h3>
       <div className={styles.faqWrap}>
         <Accordion items={faqItems} single />
       </div>
@@ -200,7 +196,7 @@ export function Step2Ordering({ benefitType }: { benefitType: BenefitType | null
         </>
       )}
 
-      <h3 className={styles.sectionHeading}>Other ordering methods</h3>
+      <h3 className={styles.faqKicker}>Other ordering methods</h3>
       <SelectStateVendors />
     </div>
   );
