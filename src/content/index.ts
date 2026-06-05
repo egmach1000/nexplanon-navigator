@@ -152,6 +152,30 @@ export function getContact(id: string): Contact | undefined {
   return (contacts.items as Contact[]).find((c) => c.id === id);
 }
 
+/**
+ * Form/resource id groups shared by the landing "Product Billing and Coding
+ * Resources" accordion and the quick-reference drawer, so the two can't drift.
+ * Excludes the Medical/Pharmacy Benefits panels (those are contact cards, not
+ * downloadable links).
+ */
+export const enrollmentFormIds = [
+  "enrollment-interactive",
+  "enrollment-sample",
+  "eprescribe",
+];
+export const billingResourceIds = ["rebate", "replacement", "fqhc-policies"];
+
+/** The above, grouped with headings for the quick-reference drawer. */
+export const quickRefFormGroups: Array<{ heading: string; formIds: string[] }> = [
+  { heading: "Enrollment", formIds: enrollmentFormIds },
+  { heading: "Billing & Reimbursement", formIds: billingResourceIds },
+];
+
+/** Look up a single form/resource by id. */
+export function getForm(id: string): FormAsset | undefined {
+  return (forms.items as FormAsset[]).find((f) => f.id === id);
+}
+
 /** Strip a phone/fax string down to digits for a `tel:` href. */
 export function telHref(value: string): string {
   return `tel:${value.replace(/\D/g, "")}`;

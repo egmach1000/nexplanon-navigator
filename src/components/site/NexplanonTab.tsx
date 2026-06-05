@@ -12,6 +12,8 @@ import {
   specialtyPharmacies,
   fileLinkProps,
   telHref,
+  enrollmentFormIds,
+  billingResourceIds,
   type Distributor,
   type FormAsset,
 } from "../../content";
@@ -19,9 +21,6 @@ import styles from "./NexplanonTab.module.css";
 
 const PI_LINK =
   isi.links.find((l) => l.label === "Prescribing Information")?.href ?? "#";
-
-const ENROLLMENT_FORM_IDS = ["enrollment-interactive", "enrollment-sample", "eprescribe"];
-const BILLING_RESOURCE_IDS = ["rebate", "replacement", "fqhc-policies"];
 
 function FormTile({ form }: { form: FormAsset }) {
   return (
@@ -70,8 +69,8 @@ export function NexplanonTab({ onLaunch }: { onLaunch: () => void }) {
       .map((id) => (forms.items as FormAsset[]).find((f) => f.id === id))
       .filter((f): f is FormAsset => Boolean(f));
 
-  const enrollmentForms = byIds(ENROLLMENT_FORM_IDS);
-  const billingResources = byIds(BILLING_RESOURCE_IDS);
+  const enrollmentForms = byIds(enrollmentFormIds);
+  const billingResources = byIds(billingResourceIds);
 
   const accordionItems: AccordionItemDef[] = [
     {

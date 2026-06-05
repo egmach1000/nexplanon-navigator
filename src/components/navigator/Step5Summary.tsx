@@ -28,7 +28,7 @@ import styles from "./Step5Summary.module.css";
 
 type ResolvedContact = { name: string; phone: string };
 
-/** Flatten every code into {label, value} rows for the recap + playbook. */
+/** Flatten every code into {label, value} rows for the recap + summary report. */
 function codeRows() {
   return (codes.groups as CodeGroup[]).flatMap((g) =>
     g.codes.map((c) => ({ label: g.system, value: c.value })),
@@ -77,7 +77,7 @@ function buildPrintHtml(
 <html>
 <head>
 <meta charset="utf-8" />
-<title>NEXPLANON Navigator — Playbook</title>
+<title>NEXPLANON Navigator — Summary report</title>
 <style>
   * { box-sizing: border-box; }
   body { font-family: Montserrat, system-ui, sans-serif; color: #171717; margin: 0; padding: 32px; }
@@ -98,7 +98,7 @@ function buildPrintHtml(
 </style>
 </head>
 <body>
-  <span class="pill">NEXPLANON Navigator playbook</span>
+  <span class="pill">NEXPLANON Navigator summary report</span>
   <h1>${esc(headline)}</h1>
   <div class="meta">Generated ${esc(today)} · Coverage selected: ${esc(benefitLabel)}</div>
   <p>${esc(summary)}</p>
@@ -137,7 +137,7 @@ function buildPrintHtml(
 /**
  * Step 5 — Summary & resources (PRD §5 Step 5). Recaps the pathway chosen in
  * Step 1, the codes that apply, documents, key contacts, and next actions, with
- * a printable one-page playbook. All content composes from the content layer.
+ * a printable one-page summary report. All content composes from the content layer.
  */
 export function Step5Summary({
   benefitType,
@@ -150,7 +150,7 @@ export function Step5Summary({
     return (
       <div className={styles.empty}>
         <p className={styles.emptyText}>
-          Choose a coverage type in Step 1 to generate your tailored playbook —
+          Choose a coverage type in Step 1 to generate your summary report —
           the recap, codes, documents, and contacts are based on whether
           NEXPLANON is covered under the medical or pharmacy benefit.
         </p>
@@ -165,7 +165,7 @@ export function Step5Summary({
   const benefitLabel = benefitType === "medical" ? "Medical benefit" : "Pharmacy benefit";
   const rows = codeRows();
 
-  function printPlaybook() {
+  function printReport() {
     const html = buildPrintHtml(
       benefitLabel,
       pathway.headline,
@@ -188,15 +188,15 @@ export function Step5Summary({
         <div className={styles.heroRow}>
           <div className={styles.heroMain}>
             <span className={styles.heroPill}>
-              <CheckCircle2 size={13} aria-hidden /> Your tailored playbook
+              <CheckCircle2 size={13} aria-hidden /> Based on your answers
             </span>
             <h3 className={styles.heroHeadline}>{pathway.headline}</h3>
             <p className={styles.heroSummary}>{pathway.summary}</p>
           </div>
           <div className={styles.heroActions}>
-            <button type="button" className={styles.btnPrimary} onClick={printPlaybook}>
+            <button type="button" className={styles.btnPrimary} onClick={printReport}>
               <Printer size={16} aria-hidden />
-              Print playbook
+              Print report
             </button>
             <button type="button" className={styles.btnGhost} onClick={helpers.restart}>
               <RotateCcw size={16} aria-hidden />
@@ -309,7 +309,7 @@ export function Step5Summary({
       </section>
 
       <p className={styles.footnote}>
-        The playbook is a working summary — coverage, codes, and reimbursement
+        This is a working summary — coverage, codes, and reimbursement
         policies vary by payer and may change. Final coding is the HCP's
         responsibility.
       </p>

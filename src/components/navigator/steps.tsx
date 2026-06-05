@@ -30,7 +30,7 @@ export const STEPS: StepDef[] = [
       s.benefitType === "pharmacy"
         ? "Order through a specialty pharmacy (AOB)"
         : s.benefitType === "medical"
-          ? "Order through a specialty distributor (buy & bill)"
+          ? "Order through a specialty distributor (Buy & Bill)"
           : "Choose your ordering pathway",
     render: (state) => <Step2Ordering benefitType={state.benefitType} />,
     canContinue: () => true,
@@ -52,7 +52,7 @@ export const STEPS: StepDef[] = [
   {
     key: "summary",
     summary: "Summary report",
-    title: () => "Your tailored playbook",
+    title: () => "Your summary report",
     render: (state, helpers) => (
       <Step5Summary benefitType={state.benefitType} helpers={helpers} />
     ),
