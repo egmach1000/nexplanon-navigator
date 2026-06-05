@@ -1,4 +1,4 @@
-import { useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, BookOpen, Phone, X } from "lucide-react";
 import { Modal } from "../ui/Modal";
 import { IsiBar } from "./IsiBar";
@@ -24,6 +24,12 @@ export function NavigatorModal({
   const titleId = useId();
   const bodyRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  // Each step is a fresh "page" — start it at the top rather than inheriting
+  // the previous step's scroll position.
+  useEffect(() => {
+    bodyRef.current?.scrollTo({ top: 0 });
+  }, [stepIdx]);
 
   // Re-collect rail sections whenever the step or any answer (which can swap
   // the rendered branch) changes.
