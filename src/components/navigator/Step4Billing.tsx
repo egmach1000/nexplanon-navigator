@@ -307,9 +307,9 @@ export function Step4Billing() {
         <DenialsRouter />
       </section>
 
-      {/* Edge cases */}
-      <section className={styles.section} data-rail="Edge cases">
-        <div className={styles.kicker}>Edge cases</div>
+      {/* Reimbursements & returns */}
+      <section className={styles.section} data-rail="Reimbursements & returns">
+        <div className={styles.kicker}>Reimbursements & returns</div>
         <div className={styles.edgeWrap}>
           <Accordion items={edgeItems} />
         </div>
