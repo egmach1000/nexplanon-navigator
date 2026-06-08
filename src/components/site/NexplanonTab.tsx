@@ -177,6 +177,7 @@ export function NexplanonTab({ onLaunch }: { onLaunch: () => void }) {
               <li>Ordering pathway by benefit type</li>
               <li>Enrollment form walkthrough</li>
               <li>Copyable billing and coding references</li>
+              <li>Information about appealing denied claims</li>
             </ul>
           </div>
           <button type="button" className={styles.launchCta} onClick={onLaunch}>
