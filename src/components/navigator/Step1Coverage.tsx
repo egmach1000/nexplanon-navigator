@@ -67,9 +67,11 @@ export function Step1Coverage({
   value: BenefitType | null;
   onChange: (v: BenefitType) => void;
 }) {
-  const { medicaid, benefitChoices } = coverageHelp;
+  const { intro, medicaid, benefitChoices } = coverageHelp;
   return (
     <div className={styles.root}>
+      <p className={styles.intro}>{intro}</p>
+
       <div
         role="radiogroup"
         aria-label="How is NEXPLANON covered for this patient?"

@@ -3,6 +3,14 @@
   gap: 20px;
 }
 
+/* Lead-in paragraph above the triage cards (coverageHelp.intro). Mirrors the
+   intro typography used on the later steps. */
+.intro {
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+  line-height: 1.55;
+}
+
 .group {
   display: grid;
   gap: 12px;
