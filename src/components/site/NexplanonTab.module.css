@@ -30,6 +30,9 @@
 
 .productLockup {
   flex-shrink: 0;
+  /* Centers the lockup when the header is stacked (mobile); a no-op in the
+     desktop row layout, which already centers items on the cross axis. */
+  align-self: center;
   height: 140px;
   width: auto;
   object-fit: contain;

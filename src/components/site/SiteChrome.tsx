@@ -2,6 +2,14 @@ import { ChevronDown } from "lucide-react";
 import { getContact } from "../../content";
 import styles from "./SiteChrome.module.css";
 
+/**
+ * Ornamental brand strip shown only on mobile, where the desktop utility bar
+ * (which carries this blue band) is hidden. Purely decorative.
+ */
+export function MobileBrandBar() {
+  return <div className={styles.mobileBrandBar} aria-hidden />;
+}
+
 export function TopUtilityBar() {
   return (
     <div className={styles.utilityBar}>

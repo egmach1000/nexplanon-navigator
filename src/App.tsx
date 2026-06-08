@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  MobileBrandBar,
   PageHeading,
   ServiceBanner,
   SiteDisclaimer,
@@ -19,6 +20,7 @@ export default function App() {
 
   return (
     <div className={styles.app}>
+      <MobileBrandBar />
       <TopUtilityBar />
       <SiteHeader />
       <ServiceBanner />

@@ -1,3 +1,19 @@
+/* --------------------------------------------------- mobile brand strip */
+/* The desktop utility bar carries this blue band but is hidden < 1024px;
+   this ornamental strip keeps the brand band on mobile. */
+.mobileBrandBar {
+  display: none;
+  width: 100%;
+  height: 32px;
+  background: var(--color-brand-secondary);
+}
+
+@media (max-width: 1023px) {
+  .mobileBrandBar {
+    display: block;
+  }
+}
+
 /* ------------------------------------------------------------ utility bar */
 .utilityBar {
   width: 100%;
