@@ -1,5 +1,5 @@
 import { useId, useState } from "react";
-import { ChevronDown, ExternalLink } from "lucide-react";
+import { ExternalLink, Minus, Plus } from "lucide-react";
 import { isi } from "../../content";
 import styles from "./IsiBar.module.css";
 
@@ -23,13 +23,8 @@ export function IsiBar() {
         onClick={() => setOpen((o) => !o)}
       >
         <span className={styles.title}>{isi.heading}</span>
-        <span className={styles.action}>
-          {open ? "Collapse" : "Expand"}
-          <ChevronDown
-            size={16}
-            aria-hidden
-            className={open ? styles.chevronOpen : styles.chevron}
-          />
+        <span className={styles.action} aria-hidden>
+          {open ? <Minus size={16} /> : <Plus size={16} />}
         </span>
       </button>
 

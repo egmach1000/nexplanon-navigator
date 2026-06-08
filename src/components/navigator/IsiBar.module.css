@@ -22,22 +22,17 @@
   color: var(--color-text-primary);
 }
 
+/* Circled +/- toggle indicator (replaces the Expand/Collapse label). */
 .action {
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: var(--weight-bold);
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 1.5px solid var(--color-brand-primary);
+  border-radius: var(--radius-pill);
   color: var(--color-brand-primary);
-}
-
-.chevron,
-.chevronOpen {
-  transition: transform var(--transition-fast);
-}
-
-.chevronOpen {
-  transform: rotate(180deg);
 }
 
 .panel {
