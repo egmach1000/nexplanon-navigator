@@ -10,7 +10,6 @@ import {
   Package,
   ShieldCheck,
 } from "lucide-react";
-import { Accordion, type AccordionItemDef } from "../ui/Accordion";
 import { CopyButton } from "../ui/CopyButton";
 import {
   billingGuidance,
@@ -194,24 +193,12 @@ export function Step4Billing() {
     fqhc: Building2,
     "expired-rod": Package,
   };
-  const edgeItems: AccordionItemDef[] = edgeCases.map((e) => {
-    const Icon = edgeIcons[e.id] ?? Info;
-    return {
-      id: e.id,
-      label: e.label,
-      content: (
-        <div className={styles.edgeBody}>
-          <p>{e.body}</p>
-          {"note" in e && e.note && <p className={styles.edgeNote}>{e.note}</p>}
-          <a className={styles.edgeLink} href={e.linkUrl} target="_blank" rel="noreferrer">
-            <Icon size={14} aria-hidden />
-            {e.linkLabel}
-            <ExternalLink size={13} aria-hidden />
-          </a>
-        </div>
-      ),
-    };
-  });
+  // Short, distinct labels for the left rail (the on-page headings keep the
+  // full wording from the content layer).
+  const edgeRailLabels: Record<string, string> = {
+    fqhc: "FQHC LARC carveout",
+    "expired-rod": "Abandoned / expired rods",
+  };
 
   return (
     <div className={styles.root}>
@@ -269,7 +256,7 @@ export function Step4Billing() {
       </section>
 
       {/* Denials & coverage assurance */}
-      <section className={styles.section} data-rail="Denials & appeals">
+      <section className={styles.section} data-rail="Denials & coverage assurance">
         <div className={styles.kicker}>Denials &amp; coverage assurance</div>
         <p className={styles.sectionIntro}>
           If a claim was denied or under-reimbursed, work the pre-appeal checklist
@@ -310,12 +297,32 @@ export function Step4Billing() {
         <DenialsRouter />
       </section>
 
-      {/* Reimbursements & returns */}
-      <section className={styles.section} data-rail="Reimbursements & returns">
+      {/* Reimbursements & returns — each case is its own rail anchor */}
+      <section className={styles.section}>
         <div className={styles.kicker}>Reimbursements & returns</div>
-        <div className={styles.edgeWrap}>
-          <Accordion items={edgeItems} />
-        </div>
+        {edgeCases.map((e) => {
+          const Icon = edgeIcons[e.id] ?? Info;
+          return (
+            <div
+              key={e.id}
+              className={styles.card}
+              data-rail={edgeRailLabels[e.id] ?? e.label}
+            >
+              <div className={styles.edgeHead}>
+                <Icon size={18} aria-hidden />
+                <h3 className={styles.cardTitle}>{e.label}</h3>
+              </div>
+              <div className={styles.edgeBody}>
+                <p>{e.body}</p>
+                {"note" in e && e.note && <p className={styles.edgeNote}>{e.note}</p>}
+                <a className={styles.edgeLink} href={e.linkUrl} target="_blank" rel="noreferrer">
+                  {e.linkLabel}
+                  <ExternalLink size={13} aria-hidden />
+                </a>
+              </div>
+            </div>
+          );
+        })}
       </section>
     </div>
   );
