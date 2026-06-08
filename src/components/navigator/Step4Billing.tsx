@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import {
   AlertTriangle,
   Building2,
+  ChevronDown,
   DollarSign,
   ExternalLink,
   FileText,
@@ -47,51 +48,53 @@ function CodeCard({ system, code }: { system: string; code: Code }) {
 }
 
 function FormBoxHelper({ boxes, label }: { boxes: FormHelpBox[]; label: string }) {
-  const [selected, setSelected] = useState(0);
-  const current = boxes[selected];
+  const [open, setOpen] = useState(0);
+  const panelBaseId = useId();
   return (
-    <div className={styles.helper}>
-      <ol className={styles.boxList} aria-label={`${label} boxes`}>
-        {boxes.map((b, i) => {
-          const active = i === selected;
-          return (
-            <li key={b.box}>
-              <button
-                type="button"
-                className={`${styles.boxItem} ${active ? styles.boxItemActive : ""}`}
-                aria-current={active ? "true" : undefined}
-                onClick={() => setSelected(i)}
-              >
-                <span className={`${styles.boxNum} ${active ? styles.boxNumActive : ""}`}>
-                  {b.box}
-                </span>
-                <span className={styles.boxLabel}>{b.label}</span>
-              </button>
-            </li>
-          );
-        })}
-      </ol>
-
-      <div className={styles.detail} aria-live="polite">
-        <div className={styles.detailHead}>
-          <span className={styles.detailBadge}>Box {current.box}</span>
-          <h4 className={styles.detailTitle}>{current.label}</h4>
-        </div>
-        <p className={styles.detailGuidance}>{current.guidance}</p>
-        {current.example && (
-          <div className={styles.example}>
-            <div className={styles.exampleLabel}>Example</div>
-            <div className={styles.exampleValue}>{current.example}</div>
-          </div>
-        )}
-        {current.watchOut && (
-          <div className={styles.watchOut}>
-            <AlertTriangle size={16} aria-hidden />
-            <span>{current.watchOut}</span>
-          </div>
-        )}
-      </div>
-    </div>
+    <ol className={styles.boxList} aria-label={`${label} boxes`}>
+      {boxes.map((b, i) => {
+        const isOpen = i === open;
+        const panelId = `${panelBaseId}-${i}`;
+        return (
+          <li key={b.box} className={styles.boxRow}>
+            <button
+              type="button"
+              className={`${styles.boxItem} ${isOpen ? styles.boxItemActive : ""}`}
+              aria-expanded={isOpen}
+              aria-controls={panelId}
+              onClick={() => setOpen(isOpen ? -1 : i)}
+            >
+              <span className={`${styles.boxNum} ${isOpen ? styles.boxNumActive : ""}`}>
+                {b.box}
+              </span>
+              <span className={styles.boxLabel}>{b.label}</span>
+              <ChevronDown
+                size={18}
+                aria-hidden
+                className={isOpen ? styles.boxChevronOpen : styles.boxChevron}
+              />
+            </button>
+            {isOpen && (
+              <div id={panelId} role="region" className={styles.boxPanel}>
+                <p className={styles.detailGuidance}>{b.guidance}</p>
+                {b.example && (
+                  <div className={styles.example}>
+                    <div className={styles.exampleLabel}>Example</div>
+                    <div className={styles.exampleValue}>{b.example}</div>
+                  </div>
+                )}
+                {b.watchOut && (
+                  <div className={styles.watchOut}>
+                    <AlertTriangle size={16} aria-hidden />
+                    <span>{b.watchOut}</span>
+                  </div>
+                )}
+              </div>
+            )}
+          </li>
+        );
+      })}
+    </ol>
   );
 }
 
@@ -259,9 +262,9 @@ export function Step4Billing() {
           </button>
         </div>
         {formTab === "cms" ? (
-          <FormBoxHelper boxes={cmsBoxes} label="CMS-1500" />
+          <FormBoxHelper key="cms" boxes={cmsBoxes} label="CMS-1500" />
         ) : (
-          <FormBoxHelper boxes={ubBoxes} label="UB-04" />
+          <FormBoxHelper key="ub" boxes={ubBoxes} label="UB-04" />
         )}
       </section>
 

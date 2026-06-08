@@ -21,14 +21,25 @@
 }
 
 .stepTitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 8px;
   margin-top: 2px;
   font-size: 18px;
   font-weight: var(--weight-bold);
   line-height: 1.3;
   color: var(--color-text-primary);
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.stepCount {
   white-space: nowrap;
+}
+
+/* Desktop: render the two parts inline as "Step 1 of 5 · Coverage check". */
+.stepCount::after {
+  content: "·";
+  margin-left: 8px;
 }
 
 .hatches {
@@ -57,6 +68,10 @@
   color: var(--color-brand-primary);
 }
 
+.hatchLabel {
+  white-space: nowrap;
+}
+
 .close {
   display: inline-flex;
   align-items: center;
@@ -74,10 +89,56 @@
   background: var(--color-surface-subtle);
 }
 
-/* Hide secondary hatches on small screens; quick reference stays. */
 @media (max-width: 640px) {
-  .hatch:not(:nth-last-child(2)) {
+  .header {
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  /* The step counter doubles as the eyebrow on mobile, so drop the brand
+     eyebrow to avoid two stacked uppercase lines. */
+  .eyebrow {
     display: none;
+  }
+
+  /* Title stacks: "STEP 1 OF 5" (small/caps) over a readable step name. */
+  .stepTitle {
+    flex-direction: column;
+    align-items: flex-start;
+    column-gap: 0;
+    row-gap: 1px;
+    margin-top: 0;
+  }
+
+  .stepCount {
+    font-size: 11px;
+    font-weight: var(--weight-bold);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--color-brand-primary);
+  }
+
+  .stepCount::after {
+    content: none;
+  }
+
+  .stepName {
+    font-size: 16px;
+    font-weight: var(--weight-bold);
+    line-height: 1.25;
+  }
+
+  /* Both hatches stay, collapsed to icon-only square tap targets. */
+  .hatchLabel {
+    display: none;
+  }
+
+  .hatch {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
   }
 }
 
@@ -175,6 +236,39 @@
 
 .stepButton:hover .stepLabel {
   color: var(--color-brand-primary);
+}
+
+/* Mobile: collapse the wrapped multi-row stepper into a single edge-to-edge
+   horizontal scroller (same pattern as the landing-page tab rail). overflow-y
+   is pinned hidden so the row can't trip a vertical scrollbar. */
+@media (max-width: 640px) {
+  .progress {
+    padding: 12px 16px;
+  }
+
+  .stepper {
+    flex-wrap: nowrap;
+    gap: 0 16px;
+    margin: 10px -16px 0;
+    padding: 2px 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .stepper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .stepButton {
+    flex-shrink: 0;
+  }
+
+  .stepLabel,
+  .stepLabelCurrent {
+    white-space: nowrap;
+  }
 }
 
 /* ------------------------------------------------------------------- body */

@@ -1,7 +1,8 @@
-import { useMemo, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import {
   AlertCircle,
   CheckCircle2,
+  ChevronDown,
   FileDown,
   FileText,
   PenLine,
@@ -96,13 +97,12 @@ const SIGNED_BY = [
 export function Step3Documents() {
   const enrollment = formHelp.enrollment;
   const boxes = enrollment.boxes as FormHelpBox[];
-  const [selected, setSelected] = useState(0);
+  const [open, setOpen] = useState(0);
+  const panelBaseId = useId();
 
   const formItems = forms.items as FormAsset[];
   const interactive = formItems.find((f) => f.id === "enrollment-interactive");
   const sample = formItems.find((f) => f.id === "enrollment-sample");
-
-  const current = boxes[selected];
 
   /** Group boxes by page so the list shows the 3-page structure. */
   const pageGroups = useMemo(() => {
@@ -161,75 +161,59 @@ export function Step3Documents() {
         <div className={styles.kicker}>Box-by-box walkthrough</div>
         <p className={styles.kickerSub}>Select a callout to see what it requires.</p>
 
-        <div className={styles.walkthrough}>
-          <ol className={styles.boxList} aria-label="Enrollment form callouts">
-            {pageGroups.map((group) => (
-              <li key={group.page}>
-                <div className={styles.pageGroupLabel}>Page {group.page}</div>
-                <ul>
-                  {group.items.map(({ box, index }) => {
-                    const active = index === selected;
-                    return (
-                      <li key={box.box}>
-                        <button
-                          type="button"
-                          className={`${styles.boxItem} ${active ? styles.boxItemActive : ""}`}
-                          aria-current={active ? "true" : undefined}
-                          onClick={() => setSelected(index)}
-                        >
-                          <span className={`${styles.boxNum} ${active ? styles.boxNumActive : ""}`}>
-                            {box.box}
-                          </span>
-                          <span className={styles.boxLabel}>{box.label}</span>
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </li>
-            ))}
-          </ol>
-
-          <div className={styles.detail} aria-live="polite">
-            <div className={styles.detailHead}>
-              <span className={styles.detailNum}>{current.box}</span>
-              <h4 className={styles.detailTitle}>{current.label}</h4>
-              <WhoBadge who={whoForBox(current)} />
-            </div>
-
-            <div className={styles.detailField}>
-              <div className={styles.detailFieldLabel}>What this callout tells you</div>
-              <p className={styles.detailGuidance}>{current.guidance}</p>
-            </div>
-
-            {current.rule === "signature" && (
-              <div className={styles.calloutGrid}>
-                <Callout tone="warn" icon={PenLine} title="Signature rule">
-                  This is a signature requirement — confirm it before faxing the form.
-                </Callout>
-              </div>
-            )}
-
-            <div className={styles.detailNav}>
-              <button
-                type="button"
-                className={styles.navPrev}
-                disabled={selected === 0}
-                onClick={() => setSelected((n) => Math.max(0, n - 1))}
-              >
-                ← Previous
-              </button>
-              <button
-                type="button"
-                className={styles.navNext}
-                disabled={selected === boxes.length - 1}
-                onClick={() => setSelected((n) => Math.min(boxes.length - 1, n + 1))}
-              >
-                Next →
-              </button>
-            </div>
-          </div>
-        </div>
+        <ol className={styles.boxList} aria-label="Enrollment form callouts">
+          {pageGroups.map((group) => (
+            <li key={group.page}>
+              <div className={styles.pageGroupLabel}>Page {group.page}</div>
+              <ul>
+                {group.items.map(({ box, index }) => {
+                  const isOpen = index === open;
+                  const panelId = `${panelBaseId}-${index}`;
+                  return (
+                    <li key={box.box} className={styles.boxRow}>
+                      <button
+                        type="button"
+                        className={`${styles.boxItem} ${isOpen ? styles.boxItemActive : ""}`}
+                        aria-expanded={isOpen}
+                        aria-controls={panelId}
+                        onClick={() => setOpen(isOpen ? -1 : index)}
+                      >
+                        <span className={`${styles.boxNum} ${isOpen ? styles.boxNumActive : ""}`}>
+                          {box.box}
+                        </span>
+                        <span className={styles.boxLabel}>{box.label}</span>
+                        <ChevronDown
+                          size={18}
+                          aria-hidden
+                          className={isOpen ? styles.boxChevronOpen : styles.boxChevron}
+                        />
+                      </button>
+                      {isOpen && (
+                        <div id={panelId} role="region" className={styles.boxPanel}>
+                          <WhoBadge who={whoForBox(box)} />
+                          <div className={styles.detailField}>
+                            <div className={styles.detailFieldLabel}>
+                              What this callout tells you
+                            </div>
+                            <p className={styles.detailGuidance}>{box.guidance}</p>
+                          </div>
+                          {box.rule === "signature" && (
+                            <div className={styles.calloutGrid}>
+                              <Callout tone="warn" icon={PenLine} title="Signature rule">
+                                This is a signature requirement — confirm it before faxing the
+                                form.
+                              </Callout>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
+          ))}
+        </ol>
       </div>
 
       {/* Signature rules */}

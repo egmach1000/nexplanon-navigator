@@ -140,21 +140,9 @@
 }
 
 /* ------------------------------------------------------------- box helper */
-.helper {
-  margin-top: 16px;
-  display: grid;
-  gap: 16px;
-}
-
-@media (min-width: 820px) {
-  .helper {
-    grid-template-columns: 240px 1fr;
-  }
-}
-
 .boxList {
-  max-height: 380px;
-  overflow-y: auto;
+  margin-top: 16px;
+  overflow: hidden;
   border-radius: var(--radius-card);
   border: 1px solid var(--color-border-subtle);
   background: var(--color-surface-default);
@@ -216,41 +204,44 @@
   font-weight: var(--weight-bold);
 }
 
-.detail {
-  padding: 24px;
-  border-radius: var(--radius-panel);
-  border: 1px solid var(--color-border-subtle);
-  background: var(--color-surface-default);
-  box-shadow: var(--shadow-card);
+.boxChevron,
+.boxChevronOpen {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--color-text-secondary, #6b6b6b);
+  transition: transform var(--transition-fast);
 }
 
-.detailHead {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.boxChevronOpen {
+  transform: rotate(180deg);
+  color: var(--color-brand-primary);
+}
+
+/* ------------------------------------------------------- disclosure panel */
+.boxRow {
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.boxRow:last-child {
+  border-bottom: none;
+}
+
+.boxRow .boxItem {
+  border-bottom: none;
+}
+
+.boxPanel {
+  display: grid;
   gap: 12px;
+  padding: 16px;
+  background: var(--color-surface-default);
 }
 
-.detailBadge {
-  display: inline-flex;
-  align-items: center;
-  height: 30px;
-  padding: 0 10px;
-  border-radius: var(--radius-card);
-  background: var(--color-brand-primary);
-  color: #fff;
-  font-size: 13px;
-  font-weight: var(--weight-bold);
-}
-
-.detailTitle {
-  font-size: 17px;
-  font-weight: var(--weight-bold);
-  line-height: 1.25;
+.boxPanel > * {
+  margin-top: 0;
 }
 
 .detailGuidance {
-  margin-top: 12px;
   font-size: 14px;
   font-weight: var(--weight-regular);
   line-height: 1.55;

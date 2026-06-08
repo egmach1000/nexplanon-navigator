@@ -112,30 +112,15 @@
 }
 
 /* --------------------------------------------------------------- walkthrough */
-.walkthrough {
-  margin-top: 16px;
-  display: grid;
-  gap: 16px;
-}
-
-@media (min-width: 860px) {
-  .walkthrough {
-    grid-template-columns: 300px 1fr;
-  }
-}
-
 .boxList {
-  max-height: 460px;
-  overflow-y: auto;
+  margin-top: 16px;
+  overflow: hidden;
   border-radius: var(--radius-card);
   border: 1px solid var(--color-border-subtle);
   background: var(--color-surface-default);
 }
 
 .pageGroupLabel {
-  position: sticky;
-  top: 0;
-  z-index: 1;
   padding: 8px 12px;
   font-size: 11px;
   font-weight: var(--weight-bold);
@@ -197,43 +182,43 @@
   font-weight: var(--weight-bold);
 }
 
-/* ------------------------------------------------------------- detail panel */
-.detail {
-  padding: 24px;
-  border-radius: var(--radius-panel);
-  border: 1px solid var(--color-border-subtle);
-  background: var(--color-surface-default);
-  box-shadow: var(--shadow-card);
+.boxChevron,
+.boxChevronOpen {
+  flex-shrink: 0;
+  margin-left: auto;
+  align-self: center;
+  color: var(--color-text-secondary, #6b6b6b);
+  transition: transform var(--transition-fast);
 }
 
-.detailHead {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.boxChevronOpen {
+  transform: rotate(180deg);
+  color: var(--color-brand-primary);
+}
+
+/* ------------------------------------------------------- disclosure panel */
+.boxRow {
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.boxRow:last-child {
+  border-bottom: none;
+}
+
+/* The trigger carries its own divider via the list rows now. */
+.boxRow .boxItem {
+  border-bottom: none;
+}
+
+.boxPanel {
+  display: grid;
   gap: 12px;
-}
-
-.detailNum {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-pill);
-  background: var(--color-brand-primary);
-  color: #fff;
-  font-size: 14px;
-  font-weight: var(--weight-bold);
-}
-
-.detailTitle {
-  font-size: 18px;
-  font-weight: var(--weight-bold);
-  line-height: 1.25;
+  padding: 16px;
+  background: var(--color-surface-default);
 }
 
 .detailField {
-  margin-top: 16px;
+  margin-top: 0;
 }
 
 .detailFieldLabel {
@@ -248,43 +233,6 @@
   font-size: 14px;
   font-weight: var(--weight-regular);
   line-height: 1.6;
-}
-
-.detailNav {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.navPrev,
-.navNext {
-  border: none;
-  background: none;
-  padding: 0;
-  font-size: 13px;
-  font-weight: var(--weight-bold);
-  cursor: pointer;
-}
-
-.navPrev {
-  color: var(--color-brand-secondary);
-}
-
-.navNext {
-  color: var(--color-brand-primary);
-}
-
-.navPrev:hover:not(:disabled),
-.navNext:hover:not(:disabled) {
-  text-decoration: underline;
-}
-
-.navPrev:disabled,
-.navNext:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
 }
 
 /* -------------------------------------------------------------- who badge */

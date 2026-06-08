@@ -24,11 +24,21 @@ export function NavigatorModal({
   const titleId = useId();
   const bodyRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const stepperRef = useRef<HTMLOListElement>(null);
 
   // Each step is a fresh "page" — start it at the top rather than inheriting
   // the previous step's scroll position.
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 });
+  }, [stepIdx]);
+
+  // On mobile the stepper is a horizontal scroller — keep the active chip in
+  // view so later steps aren't stranded off-screen. `block: "nearest"` avoids
+  // nudging the modal vertically.
+  useEffect(() => {
+    stepperRef.current
+      ?.querySelector('[aria-current="step"]')
+      ?.scrollIntoView({ inline: "center", block: "nearest" });
   }, [stepIdx]);
 
   // Re-collect rail sections whenever the step or any answer (which can swap
@@ -69,7 +79,10 @@ export function NavigatorModal({
         <div className={styles.headerText}>
           <div className={styles.eyebrow}>NEXPLANON Navigator</div>
           <h1 id={titleId} className={styles.stepTitle}>
-            Step {stepIdx + 1} of {STEPS.length} · {step.summary}
+            <span className={styles.stepCount}>
+              Step {stepIdx + 1} of {STEPS.length}
+            </span>
+            <span className={styles.stepName}>{step.summary}</span>
           </h1>
         </div>
         <div className={styles.hatches}>
@@ -77,14 +90,19 @@ export function NavigatorModal({
             type="button"
             className={styles.hatch}
             onClick={() => setDrawerOpen(true)}
+            aria-label="Quick reference"
           >
-            <BookOpen size={14} aria-hidden />
-            Quick reference
+            <BookOpen size={16} aria-hidden />
+            <span className={styles.hatchLabel}>Quick reference</span>
           </button>
           {oap?.phone && (
-            <a className={styles.hatch} href={telHref(oap.phone)}>
-              <Phone size={14} aria-hidden />
-              Contact us
+            <a
+              className={styles.hatch}
+              href={telHref(oap.phone)}
+              aria-label="Contact us"
+            >
+              <Phone size={16} aria-hidden />
+              <span className={styles.hatchLabel}>Contact us</span>
             </a>
           )}
           <button
@@ -115,7 +133,7 @@ export function NavigatorModal({
             {stepIdx + 1} / {STEPS.length}
           </div>
         </div>
-        <ol className={styles.stepper}>
+        <ol className={styles.stepper} ref={stepperRef}>
           {STEPS.map((s, i) => {
             const cls =
               i === stepIdx
